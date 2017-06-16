@@ -47,3 +47,4 @@ Route::get('/admin',function(){
 Route::get('/ck',function(){
     return view('admin_home.ckfinder' );
 });
+Route::post('/ckdata','DataController@store');
