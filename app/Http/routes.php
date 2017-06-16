@@ -15,10 +15,12 @@ Route::get('/', function () {
     Session::set('applocale', 'np');
     return view('index');
 });
+
 Route::get('welcome', function () {
     return view('firstpage');
     //
 });
+
 Route::get('en/{page}', function ($page) {
     App::setLocale('en');
     Route::currentRouteName();
@@ -31,14 +33,17 @@ Route::get('np/{page}', function ($page) {
     return view($page);
     //
 });
+
 Route::get('sample', function () {
     App::setLocale(Session::get('applocale'));
     return view('samplepage' );
     //
 });
+
 Route::get('/admin',function(){
     return view('admin_home.dashboard' );
 });
+
 Route::get('/ck',function(){
     return view('admin_home.ckfinder' );
 });
