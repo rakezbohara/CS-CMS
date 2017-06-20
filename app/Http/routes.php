@@ -15,6 +15,14 @@ Route::get('/', function () {
     Session::set('applocale', 'np');
     return view('index');
 });
+Route::get('/aboutus', function () {
+    App::setLocale(Session::get('applocale'));
+    return view('aboutus');
+});
+Route::get('blog', function () {
+    App::setLocale(Session::get('applocale'));
+    return view('blog');
+});
 Route::get('welcome', function () {
     return view('firstpage');
     //
@@ -38,8 +46,12 @@ Route::get('sample', function () {
 });
 Route::get('/admin',function(){
     return view('admin_home.dashboard' );
-});
+})->middleware('auth');
 Route::get('/ck',function(){
     return view('admin_home.ckfinder' );
 });
 Route::post('/ckdata','DataController@store');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

@@ -50,8 +50,8 @@
             <div class="collapse navbar-collapse" id="myNavbar">
 
                 <ul class="nav navbar-nav white">
-                    <li class="active"><a href="#"> @lang('welcome.menu1')</a></li>
-                    <li><a href="/aboutus">@lang('welcome.menu2')</a></li>
+                    <li><a href="/"> @lang('welcome.menu1')</a></li>
+                    <li class="active"><a href="#">@lang('welcome.menu2')</a></li>
                     <li><a href="#">@lang('welcome.menu3')</a></li>
                     <li><a href="#">@lang('welcome.menu4')</a></li>
                     <li><a href="#">@lang('welcome.menu5')</a></li>
@@ -66,86 +66,39 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
-            <!--slide starts-->
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Chania">
-                        <div class="carousel-caption">
-                            <h3>Chania</h3>
-                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Chania">
-                        <div class="carousel-caption">
-                            <h3>Chania</h3>
-                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Flower">
-                        <div class="carousel-caption">
-                            <h3>Flowers</h3>
-                            <p>Beautiful flowers in Kolymbari, Crete.</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Flower">
-                        <div class="carousel-caption">
-                            <h3>Flowers</h3>
-                            <p>Beautiful flowers in Kolymbari, Crete.</p>
-                        </div>
-                    </div>
+        <div class="col-sm-8">
+            <div class="body">
+                <div class="panel-heading">
+                    <h3 class="topic">Hamro barema kei kura</h3>
                 </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="panel-body">
+                    alksndknsdhcj sgdgjfgusgd cgsjdgfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali
+                </div>
             </div>
-            <!--slide ends-->
+
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4 right">
             <!--notice section staet-->
-            <div class="col-sm-6 notice">
+            <div class="col-sm-12 notice">
                 <span class="topic">News</span>
                 <hr/>
                 <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
+                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
                     <span class="pubdate">2072-12-12</span>
                 </div>
                 <hr/>
                 <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
+                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
                     <span class="pubdate">2072-12-12</span>
                 </div>
                 <hr/>
                 <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
+                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
                     <span class="pubdate">2072-12-12</span>
                 </div>
                 <hr/>
                 <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
+                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
                     <span class="pubdate">2072-12-12</span>
                 </div>
                 <hr/>
@@ -154,39 +107,11 @@
                 </div>
             </div>
             <!--notice section ends-->
-            <!--person info starts-->
-            <div class="col-sm-6  notice">
-                <div class="person">
-                    <img alt="Image" class="image img-responsive img-rounded left" src="http://ratcfw.gov.np/upload/downloadimages/profile/Bir%20Bahadur%20Chand%204.jpg">
 
-                    <span class="person-name">Name of person</span><br/>
-                    <span class="person-name">Post of person</span>
-                </div>
-                <hr/>
-                <div class="person">
-                    <img alt="Image" class="image img-responsive img-rounded left" src="http://ratcfw.gov.np/upload/downloadimages/profile/Bir%20Bahadur%20Chand%204.jpg">
-                    <span class="person-name">Name of person</span><br/>
-                    <span class="person-name">Post of person</span>
-                </div>
-            </div>
-            <!--person info ends-->
-        </div>
-        <div class="marq col-sm-12 right">
-            <marquee direction="left" behavior="scroll"><a href="#">Notice 1</a> <a href="#">Notice 2</a> <a href="#">Notice 3</a> <a href="#">Notice 4</a></marquee>
         </div>
         <hr/>
         <hr/>
     </div>
-
-    <div class="body">
-        <div class="panel-heading">
-            <h3 class="topic">Hamro barema kei kura</h3>
-        </div>
-        <div class="panel-body">
-            alksndknsdhcj sgdgjfgusgd cgsjdgfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali
-        </div>
-    </div>
-
     <div class="row">
         <div class="col-sm-4">
             <div class="notice twit">
@@ -222,10 +147,6 @@
                     <span class="pubdate">2072-12-12</span>
                 </div>
                 <hr/>
-
-
-
-
             </div>
         </div>
         <div class="col-sm-4">
@@ -236,9 +157,6 @@
     </div>
 
 </div>
-
-
-
 <div class="bkg">
     <div class="row">
         <div class="col-sm-4">
