@@ -55,3 +55,6 @@ Route::post('/ckdata','DataController@store');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+//Admin Routes
+Route::get('/blogpost','AdminHomeController@blogpost');
