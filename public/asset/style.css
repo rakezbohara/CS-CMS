@@ -51,7 +51,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	margin-right: 30px;
 }
 .cont{
-	width: 50%;
+	width: 60%;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -123,4 +123,21 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 .twit{
 	height: 400px;
 	overflow:scroll;
+}
+.marq{
+	background-color: #009688;
+	height: 35px;
+	margin-top: 5px;
+}
+.marq > marquee > a{
+	color: #fff;
+	font-size: 22px;
+}
+.articlethumb{
+	min-height: 100px;
+	border: solid 1px;
+	border-color: #009688;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
