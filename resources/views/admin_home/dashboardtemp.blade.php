@@ -17,7 +17,7 @@
         <div class="panel-heading">Integrating CKeditor in Laravel 5.3</div>
         <div class="panel-body">
             {{ Form::open(array('url' => 'ckdata')) }}
-                <textarea id="ckeditor" name="ckeditor" class="ckeditor"></textarea>
+            <textarea id="ckeditor" name="ckeditor" class="ckeditor"></textarea>
             <script type="text/javascript">
                 var editor = CKEDITOR.replace( 'ckeditor' );
                 CKFinder.setupCKEditor( editor, '/ckfinder/' );

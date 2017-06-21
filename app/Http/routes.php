@@ -58,3 +58,9 @@ Route::get('/home', 'HomeController@index');
 
 //Admin Routes
 Route::get('/blogpost','AdminHomeController@blogpost');
+Route::get('/createblogpost','AdminHomeController@createblogpost');
+Route::post('/createblogpost','AdminHomeController@savecreateblogpost');
+Route::post('saveblog/{blogitem}','AdminHomeController@saveeditblogpost');
+Route::get('/editblog/{blogitem}','AdminHomeController@editblogpost');
+Route::get('/deleteblog/{blogitem}','AdminHomeController@deleteblogpost');
+
