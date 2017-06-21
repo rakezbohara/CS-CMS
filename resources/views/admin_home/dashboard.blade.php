@@ -593,7 +593,7 @@
 
         <!-- Widgets -->
         <div class="row clearfix">
-            <a href="/blogpost">
+            <a href="{{ url('blogpost') }}">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box bg-pink hover-expand-effect">
                         <div class="icon">
@@ -605,16 +605,18 @@
                     </div>
                 </div>
             </a>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box bg-cyan hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons">help</i>
-                    </div>
-                    <div class="content">
-                        <div class="text">SLIDE SHOW</div>
+            <a href="{{  url('slide') }}">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-cyan hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">help</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">SLIDE SHOW</div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box bg-light-green hover-expand-effect">
                     <div class="icon">

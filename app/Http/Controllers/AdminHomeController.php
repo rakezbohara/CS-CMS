@@ -23,8 +23,7 @@ class AdminHomeController extends Controller
         $blogpost->content = $input['ckeditor'];
         $blogpost->pubdate = $input['pubdate'];
         $blogpost->save();
-        $blogpost = blogpost::all();
-        return view('admin_home.blog.blogpost',compact('blogpost'));
+        return redirect('/blogpost');
     }
     public function editblogpost($blogitem){
         $blogpost = blogpost::find($blogitem);

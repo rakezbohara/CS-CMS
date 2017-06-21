@@ -14,29 +14,55 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="asset/admin/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../asset/admin/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="asset/admin/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Sweet Alert Css -->
-    <link href="asset/admin/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="asset/admin/css/style.css" rel="stylesheet">
+    <link href="../asset/admin/css/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+    <link href="../asset/admin/css/themes/all-themes.css" rel="stylesheet" />
 
 
-    <script src="ckeditor/ckeditor.js"></script>
-    <script src="ckfinder/ckfinder.js"></script>
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+
+        function BrowseServer()
+        {
+            // You can use the "CKFinder" class to render CKFinder in a page:
+            var finder = new CKFinder();
+            finder.basePath = '/asset/ckfinder/';	// The path for the installation of CKFinder (default = "/ckfinder/").
+            finder.StartupPath = 'Images:/slideshow/'
+            finder.selectActionFunction = SetFileField;
+            finder.popup();
+
+            // It can also be done in a single line, calling the "static"
+            // popup( basePath, width, height, selectFunction ) function:
+            // CKFinder.popup( '../', null, null, SetFileField ) ;
+            //
+            // The "popup" function can also accept an object as the only argument.
+            // CKFinder.popup( { basePath : '../', selectActionFunction : SetFileField } ) ;
+        }
+
+        // This is a sample function which is called when a file is selected in CKFinder.
+        function SetFileField( fileUrl )
+        {
+            document.getElementById( 'xFilePath' ).value = fileUrl;
+        }
+
+    </script>
 </head>
 
 <body class="theme-red">
@@ -453,43 +479,40 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG > CREATE</h2>
+            <h2>SLIDE > EDIT</h2>
         </div>
         <!-- Basic Validation -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h2>CREATE NEW POST</h2>
+                        <h2>EDIT SLIDE</h2>
+
                     </div>
                     <div class="body">
-                        <form id="form_validation" method="POST" action="{{ url('createblogpost') }}" enctype="multipart/form-data">
+                        <form id="form_validation" method="POST" action="{{ url('editslide',$slideshow['id']) }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="title" required minlength="20">
+                                    <input type="text" class="form-control" value="{{ $slideshow['title'] }}" name="title" required >
                                     <label class="form-label">Title</label>
                                 </div>
                             </div>
 
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <h6>Content</h6>
-                                    <textarea id="ckeditor" name="ckeditor" class="ckeditor"></textarea>
-                                    <script type="text/javascript">
-                                        var editor = CKEDITOR.replace( 'ckeditor' );
-                                        CKFinder.setupCKEditor( editor, '/ckfinder/' );
-                                    </script>
-
+                                    <input type="text" class="form-control" name="desc" value="{{ $slideshow['desc'] }}" required minlength="5">
+                                    <label class="form-label">Description</label>
                                 </div>
                             </div>
+
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control" value="{{ date("y-m-d") }}" name="pubdate" required>
-                                    <label class="form-label">Pub-date</label>
+                                    <input id="xFilePath"  name="imgpath" type="text" value="{{ $slideshow['imgpath'] }}" size="60" required />
+                                    <input type="button"  class="btn bg-teal waves-effect" value="Browse Server" onclick="BrowseServer();" />
                                 </div>
                             </div>
-                            <button class="btn btn-primary waves-effect" type="submit">CREATE</button>
+                            <button class="btn btn-primary waves-effect" type="submit">UPDATE</button>
                         </form>
                     </div>
                 </div>
@@ -500,47 +523,47 @@
 </section>
 
 <!-- Jquery Core Js -->
-<script src="asset/admin/plugins/jquery/jquery.min.js"></script>
+<script src="../asset/admin/plugins/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core Js -->
-<script src="asset/admin/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="../asset/admin/plugins/bootstrap/js/bootstrap.js"></script>
 
 <!-- Select Plugin Js -->
-<script src="asset/admin/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<script src="../asset/admin/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
 <!-- Slimscroll Plugin Js -->
-<script src="asset/admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="../asset/admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
 <!-- Waves Effect Plugin Js -->
-<script src="asset/admin/plugins/node-waves/waves.js"></script>
+<script src="../asset/admin/plugins/node-waves/waves.js"></script>
 
 <!-- Jquery CountTo Plugin Js -->
-<script src="asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
+<script src="../asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
 
 <!-- Jquery Validation Plugin Css -->
-<script src="asset/admin/plugins/jquery-validation/jquery.validate.js"></script>
+<script src="../asset/admin/plugins/jquery-validation/jquery.validate.js"></script>
 
 <!-- JQuery Steps Plugin Js -->
-<script src="asset/admin/plugins/jquery-steps/jquery.steps.js"></script>
+<script src="../asset/admin/plugins/jquery-steps/jquery.steps.js"></script>
 
 <!-- Sweet Alert Plugin Js -->
-<script src="asset/admin/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="../asset/admin/plugins/sweetalert/sweetalert.min.js"></script>
 
 <!-- Morris Plugin Js -->
-<script src="asset/admin/plugins/raphael/raphael.min.js"></script>
-<script src="asset/admin/plugins/morrisjs/morris.js"></script>
+<script src="../asset/admin/plugins/raphael/raphael.min.js"></script>
+<script src="../asset/admin/plugins/morrisjs/morris.js"></script>
 
 
 <!-- Sparkline Chart Plugin Js -->
-<script src="asset/admin/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="../asset/admin/plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
 <!-- Custom Js -->
-<script src="asset/admin/js/admin.js"></script>
-<script src="asset/admin/js/pages/index.js"></script>
-<script src="asset/admin/js/pages/forms/form-validation.js"></script>
+<script src="../asset/admin/js/admin.js"></script>
+<script src="../asset/admin/js/pages/index.js"></script>
+<script src="../asset/admin/js/pages/forms/form-validation.js"></script>
 
 <!-- Demo Js -->
-<script src="asset/admin/js/demo.js"></script>
+<script src="../asset/admin/js/demo.js"></script>
 </body>
 
 </html>

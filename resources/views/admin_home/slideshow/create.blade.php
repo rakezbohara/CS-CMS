@@ -37,6 +37,32 @@
 
     <script src="ckeditor/ckeditor.js"></script>
     <script src="ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+
+        function BrowseServer()
+        {
+            // You can use the "CKFinder" class to render CKFinder in a page:
+            var finder = new CKFinder();
+            finder.basePath = '/asset/ckfinder/';	// The path for the installation of CKFinder (default = "/ckfinder/").
+            finder.StartupPath = 'Images:/slideshow/'
+            finder.selectActionFunction = SetFileField;
+            finder.popup();
+
+            // It can also be done in a single line, calling the "static"
+            // popup( basePath, width, height, selectFunction ) function:
+            // CKFinder.popup( '../', null, null, SetFileField ) ;
+            //
+            // The "popup" function can also accept an object as the only argument.
+            // CKFinder.popup( { basePath : '../', selectActionFunction : SetFileField } ) ;
+        }
+
+        // This is a sample function which is called when a file is selected in CKFinder.
+        function SetFileField( fileUrl )
+        {
+            document.getElementById( 'xFilePath' ).value = fileUrl;
+        }
+
+    </script>
 </head>
 
 <body class="theme-red">
@@ -453,40 +479,37 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG > CREATE</h2>
+            <h2>SLIDE > CREATE</h2>
         </div>
         <!-- Basic Validation -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h2>CREATE NEW POST</h2>
+                        <h2>CREATE NEW SLIDE</h2>
+
                     </div>
                     <div class="body">
-                        <form id="form_validation" method="POST" action="{{ url('createblogpost') }}" enctype="multipart/form-data">
+                        <form id="form_validation" method="POST" action="{{ url('createslide') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="title" required minlength="20">
+                                    <input type="text" class="form-control" name="title" required >
                                     <label class="form-label">Title</label>
                                 </div>
                             </div>
 
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <h6>Content</h6>
-                                    <textarea id="ckeditor" name="ckeditor" class="ckeditor"></textarea>
-                                    <script type="text/javascript">
-                                        var editor = CKEDITOR.replace( 'ckeditor' );
-                                        CKFinder.setupCKEditor( editor, '/ckfinder/' );
-                                    </script>
-
+                                    <input type="text" class="form-control" name="desc" required minlength="5">
+                                    <label class="form-label">Description</label>
                                 </div>
                             </div>
+
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control" value="{{ date("y-m-d") }}" name="pubdate" required>
-                                    <label class="form-label">Pub-date</label>
+                                    <input id="xFilePath"  name="imgpath" type="text" size="60" required />
+                                    <input type="button"  class="btn bg-teal waves-effect" value="Browse Server" onclick="BrowseServer();" />
                                 </div>
                             </div>
                             <button class="btn btn-primary waves-effect" type="submit">CREATE</button>

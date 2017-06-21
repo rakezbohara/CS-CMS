@@ -22,9 +22,6 @@
     <!-- Animation Css -->
     <link href="asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- Sweet Alert Css -->
-    <link href="asset/admin/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
-
     <!-- Morris Chart Css-->
     <link href="asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
 
@@ -33,10 +30,6 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
-
-
-    <script src="ckeditor/ckeditor.js"></script>
-    <script src="ckfinder/ckfinder.js"></script>
 </head>
 
 <body class="theme-red">
@@ -453,49 +446,49 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG > CREATE</h2>
+            <h2>SLIDE SHOW</h2>
         </div>
-        <!-- Basic Validation -->
+        <!-- Basic Table -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h2>CREATE NEW POST</h2>
+
+                        <a href="{{ url('createslide') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW SLIDE</button></a>
                     </div>
-                    <div class="body">
-                        <form id="form_validation" method="POST" action="{{ url('createblogpost') }}" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" class="form-control" name="title" required minlength="20">
-                                    <label class="form-label">Title</label>
-                                </div>
-                            </div>
+                    <div class="body table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>TITLE</th>
+                                <th>DESCRIPTION</th>
+                                <th>ACTION</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $i=1;
+                            ?>
 
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <h6>Content</h6>
-                                    <textarea id="ckeditor" name="ckeditor" class="ckeditor"></textarea>
-                                    <script type="text/javascript">
-                                        var editor = CKEDITOR.replace( 'ckeditor' );
-                                        CKFinder.setupCKEditor( editor, '/ckfinder/' );
-                                    </script>
+                            @foreach ($slideshow as $slide)
+                                <tr>
+                                    <th scope="row">{{ $i++ }}</th>
+                                    <td>{{$slide['title']}}</td>
+                                    <td>{{$slide['desc']}}</td>
+                                    <td><a href="{{url('editslide',$slide['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
+                                        <a href="{{url('deleteslide',$slide['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
+                                    </td>
+                                </tr>
+                            @endforeach
 
-                                </div>
-                            </div>
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" class="form-control" value="{{ date("y-m-d") }}" name="pubdate" required>
-                                    <label class="form-label">Pub-date</label>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary waves-effect" type="submit">CREATE</button>
-                        </form>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Basic Validation -->
+        <!-- #END# Basic Table -->
     </div>
 </section>
 
@@ -517,15 +510,6 @@
 <!-- Jquery CountTo Plugin Js -->
 <script src="asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
 
-<!-- Jquery Validation Plugin Css -->
-<script src="asset/admin/plugins/jquery-validation/jquery.validate.js"></script>
-
-<!-- JQuery Steps Plugin Js -->
-<script src="asset/admin/plugins/jquery-steps/jquery.steps.js"></script>
-
-<!-- Sweet Alert Plugin Js -->
-<script src="asset/admin/plugins/sweetalert/sweetalert.min.js"></script>
-
 <!-- Morris Plugin Js -->
 <script src="asset/admin/plugins/raphael/raphael.min.js"></script>
 <script src="asset/admin/plugins/morrisjs/morris.js"></script>
@@ -537,7 +521,6 @@
 <!-- Custom Js -->
 <script src="asset/admin/js/admin.js"></script>
 <script src="asset/admin/js/pages/index.js"></script>
-<script src="asset/admin/js/pages/forms/form-validation.js"></script>
 
 <!-- Demo Js -->
 <script src="asset/admin/js/demo.js"></script>

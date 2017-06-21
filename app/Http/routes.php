@@ -57,10 +57,22 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 //Admin Routes
+
+//Blog
 Route::get('/blogpost','AdminHomeController@blogpost');
 Route::get('/createblogpost','AdminHomeController@createblogpost');
 Route::post('/createblogpost','AdminHomeController@savecreateblogpost');
-Route::post('saveblog/{blogitem}','AdminHomeController@saveeditblogpost');
+Route::post('editblog/{blogitem}','AdminHomeController@saveeditblogpost');
 Route::get('/editblog/{blogitem}','AdminHomeController@editblogpost');
 Route::get('/deleteblog/{blogitem}','AdminHomeController@deleteblogpost');
+
+//Slideshow
+Route::get('slide','AdminSlideController@slideshow');
+Route::get('createslide','AdminSlideController@createslide');
+Route::post('createslide','AdminSlideController@savecreateslide');
+Route::get('editslide/{slideitem}','AdminSlideController@editslide');
+Route::post('editslide/{slideitem}','AdminSlideController@saveeditslide');
+Route::get('/deleteslide/{slideitem}','AdminSlideController@deleteslide');
+
+
 

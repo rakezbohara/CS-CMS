@@ -454,7 +454,7 @@
                 <div class="card">
                     <div class="header">
 
-                        <a href="createblogpost"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
+                        <a href="{{ url('createblogpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
                     </div>
                     <div class="body table-responsive">
                         <table class="table">
