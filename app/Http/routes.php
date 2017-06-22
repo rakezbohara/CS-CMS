@@ -46,7 +46,6 @@ Route::get('np/{page}', function ($page) {
 Route::get('sample', function () {
     App::setLocale(Session::get('applocale'));
     return view('samplepage' );
-    //
 });
 
 Route::get('/admin',function(){
@@ -61,3 +60,8 @@ Route::post('/ckdata','DataController@store');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+//Admin Routes
+Route::get('/blogpost','AdminHomeController@blogpost');
+
+Route::get('/images', 'HomeController@image');
