@@ -14,22 +14,55 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="asset/admin/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../asset/admin/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="asset/admin/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Sweet Alert Css -->
+    <link href="../asset/admin/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="asset/admin/css/style.css" rel="stylesheet">
+    <link href="../asset/admin/css/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+    <link href="../asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+
+
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+
+        function BrowseServer()
+        {
+            // You can use the "CKFinder" class to render CKFinder in a page:
+            var finder = new CKFinder();
+            finder.basePath = '/asset/ckfinder/';	// The path for the installation of CKFinder (default = "/ckfinder/").
+            finder.StartupPath = 'Images:/slideshow/'
+            finder.selectActionFunction = SetFileField;
+            finder.popup();
+
+            // It can also be done in a single line, calling the "static"
+            // popup( basePath, width, height, selectFunction ) function:
+            // CKFinder.popup( '../', null, null, SetFileField ) ;
+            //
+            // The "popup" function can also accept an object as the only argument.
+            // CKFinder.popup( { basePath : '../', selectActionFunction : SetFileField } ) ;
+        }
+
+        // This is a sample function which is called when a file is selected in CKFinder.
+        function SetFileField( fileUrl )
+        {
+            document.getElementById( 'xFilePath' ).value = fileUrl;
+        }
+
+    </script>
 </head>
 
 <body class="theme-red">
@@ -440,274 +473,97 @@
         <!-- #Footer -->
     </aside>
     <!-- #END# Left Sidebar -->
-    <!-- Right Sidebar -->
-    <aside id="rightsidebar" class="right-sidebar">
-        <ul class="nav nav-tabs tab-nav-right" role="tablist">
-            <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
-            <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
-        </ul>
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
-                <ul class="demo-choose-skin">
-                    <li data-theme="red" class="active">
-                        <div class="red"></div>
-                        <span>Red</span>
-                    </li>
-                    <li data-theme="pink">
-                        <div class="pink"></div>
-                        <span>Pink</span>
-                    </li>
-                    <li data-theme="purple">
-                        <div class="purple"></div>
-                        <span>Purple</span>
-                    </li>
-                    <li data-theme="deep-purple">
-                        <div class="deep-purple"></div>
-                        <span>Deep Purple</span>
-                    </li>
-                    <li data-theme="indigo">
-                        <div class="indigo"></div>
-                        <span>Indigo</span>
-                    </li>
-                    <li data-theme="blue">
-                        <div class="blue"></div>
-                        <span>Blue</span>
-                    </li>
-                    <li data-theme="light-blue">
-                        <div class="light-blue"></div>
-                        <span>Light Blue</span>
-                    </li>
-                    <li data-theme="cyan">
-                        <div class="cyan"></div>
-                        <span>Cyan</span>
-                    </li>
-                    <li data-theme="teal">
-                        <div class="teal"></div>
-                        <span>Teal</span>
-                    </li>
-                    <li data-theme="green">
-                        <div class="green"></div>
-                        <span>Green</span>
-                    </li>
-                    <li data-theme="light-green">
-                        <div class="light-green"></div>
-                        <span>Light Green</span>
-                    </li>
-                    <li data-theme="lime">
-                        <div class="lime"></div>
-                        <span>Lime</span>
-                    </li>
-                    <li data-theme="yellow">
-                        <div class="yellow"></div>
-                        <span>Yellow</span>
-                    </li>
-                    <li data-theme="amber">
-                        <div class="amber"></div>
-                        <span>Amber</span>
-                    </li>
-                    <li data-theme="orange">
-                        <div class="orange"></div>
-                        <span>Orange</span>
-                    </li>
-                    <li data-theme="deep-orange">
-                        <div class="deep-orange"></div>
-                        <span>Deep Orange</span>
-                    </li>
-                    <li data-theme="brown">
-                        <div class="brown"></div>
-                        <span>Brown</span>
-                    </li>
-                    <li data-theme="grey">
-                        <div class="grey"></div>
-                        <span>Grey</span>
-                    </li>
-                    <li data-theme="blue-grey">
-                        <div class="blue-grey"></div>
-                        <span>Blue Grey</span>
-                    </li>
-                    <li data-theme="black">
-                        <div class="black"></div>
-                        <span>Black</span>
-                    </li>
-                </ul>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="settings">
-                <div class="demo-settings">
-                    <p>GENERAL SETTINGS</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>Report Panel Usage</span>
-                            <div class="switch">
-                                <label><input type="checkbox" checked><span class="lever"></span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>Email Redirect</span>
-                            <div class="switch">
-                                <label><input type="checkbox"><span class="lever"></span></label>
-                            </div>
-                        </li>
-                    </ul>
-                    <p>SYSTEM SETTINGS</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>Notifications</span>
-                            <div class="switch">
-                                <label><input type="checkbox" checked><span class="lever"></span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>Auto Updates</span>
-                            <div class="switch">
-                                <label><input type="checkbox" checked><span class="lever"></span></label>
-                            </div>
-                        </li>
-                    </ul>
-                    <p>ACCOUNT SETTINGS</p>
-                    <ul class="setting-list">
-                        <li>
-                            <span>Offline</span>
-                            <div class="switch">
-                                <label><input type="checkbox"><span class="lever"></span></label>
-                            </div>
-                        </li>
-                        <li>
-                            <span>Location Permission</span>
-                            <div class="switch">
-                                <label><input type="checkbox" checked><span class="lever"></span></label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <!-- #END# Right Sidebar -->
+
 </section>
 
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>DASHBOARD</h2>
+            <h2>SLIDE > EDIT</h2>
         </div>
-
-        <!-- Widgets -->
+        <!-- Basic Validation -->
         <div class="row clearfix">
-            <a href="{{ url('blogpost') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-pink hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">playlist_add_check</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">BLOG</div>
-                        </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>EDIT SLIDE</h2>
+
                     </div>
-                </div>
-            </a>
-            <a href="{{  url('slide') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-cyan hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">help</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">SLIDE SHOW</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box bg-light-green hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons">forum</i>
-                    </div>
-                    <div class="content">
-                        <div class="text">ORG. HEAD</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box bg-orange hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons">person_add</i>
-                    </div>
-                    <div class="content">
-                        <div class="text">ORG. TECHNICAL HEAD</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box bg-pink hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons">person_add</i>
-                    </div>
-                    <div class="content">
-                        <div class="text">MARQUEE</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box bg-cyan hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons">person_add</i>
-                    </div>
-                    <div class="content">
-                        <div class="text">ABOUT US</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box bg-light-green hover-expand-effect">
-                    <div class="icon">
-                        <i class="material-icons">person_add</i>
-                    </div>
-                    <div class="content">
-                        <div class="text">IMPORTANT LINKS</div>
+                    <div class="body">
+                        <form id="form_validation" method="POST" action="{{ url('editslide',$slideshow['id']) }}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" value="{{ $slideshow['title'] }}" name="title" required >
+                                    <label class="form-label">Title</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="desc" value="{{ $slideshow['desc'] }}" required minlength="5">
+                                    <label class="form-label">Description</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="xFilePath"  name="imgpath" type="text" value="{{ $slideshow['imgpath'] }}" size="60" required />
+                                    <input type="button"  class="btn bg-teal waves-effect" value="Browse Server" onclick="BrowseServer();" />
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect" type="submit">UPDATE</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Widgets -->
-
-
-
-
+        <!-- #END# Basic Validation -->
     </div>
 </section>
 
 <!-- Jquery Core Js -->
-<script src="asset/admin/plugins/jquery/jquery.min.js"></script>
+<script src="../asset/admin/plugins/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core Js -->
-<script src="asset/admin/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="../asset/admin/plugins/bootstrap/js/bootstrap.js"></script>
 
 <!-- Select Plugin Js -->
-<script src="asset/admin/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<script src="../asset/admin/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
 <!-- Slimscroll Plugin Js -->
-<script src="asset/admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="../asset/admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
 <!-- Waves Effect Plugin Js -->
-<script src="asset/admin/plugins/node-waves/waves.js"></script>
+<script src="../asset/admin/plugins/node-waves/waves.js"></script>
 
 <!-- Jquery CountTo Plugin Js -->
-<script src="asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
+<script src="../asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
+
+<!-- Jquery Validation Plugin Css -->
+<script src="../asset/admin/plugins/jquery-validation/jquery.validate.js"></script>
+
+<!-- JQuery Steps Plugin Js -->
+<script src="../asset/admin/plugins/jquery-steps/jquery.steps.js"></script>
+
+<!-- Sweet Alert Plugin Js -->
+<script src="../asset/admin/plugins/sweetalert/sweetalert.min.js"></script>
 
 <!-- Morris Plugin Js -->
-<script src="asset/admin/plugins/raphael/raphael.min.js"></script>
-<script src="asset/admin/plugins/morrisjs/morris.js"></script>
+<script src="../asset/admin/plugins/raphael/raphael.min.js"></script>
+<script src="../asset/admin/plugins/morrisjs/morris.js"></script>
 
 
 <!-- Sparkline Chart Plugin Js -->
-<script src="asset/admin/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="../asset/admin/plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
 <!-- Custom Js -->
-<script src="asset/admin/js/admin.js"></script>
-<script src="asset/admin/js/pages/index.js"></script>
+<script src="../asset/admin/js/admin.js"></script>
+<script src="../asset/admin/js/pages/index.js"></script>
+<script src="../asset/admin/js/pages/forms/form-validation.js"></script>
 
 <!-- Demo Js -->
-<script src="asset/admin/js/demo.js"></script>
+<script src="../asset/admin/js/demo.js"></script>
 </body>
 
 </html>
