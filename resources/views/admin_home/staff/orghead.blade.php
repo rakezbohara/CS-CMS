@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -22,6 +21,9 @@
     <!-- Animation Css -->
     <link href="asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
 
+    <!-- Sweet Alert Css -->
+    <link href="asset/admin/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
     <!-- Morris Chart Css-->
     <link href="asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
 
@@ -30,6 +32,39 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+
+
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+
+        function BrowseServer()
+        {
+            // You can use the "CKFinder" class to render CKFinder in a page:
+            var finder = new CKFinder();
+            finder.basePath = '/asset/ckfinder/';	// The path for the installation of CKFinder (default = "/ckfinder/").
+            finder.rememberLastFolder = false;
+            finder.startupPath = "Images:/staff/";
+            finder.selectActionFunction = SetFileField;
+            finder.popup();
+
+            // It can also be done in a single line, calling the "static"
+            // popup( basePath, width, height, selectFunction ) function:
+            // CKFinder.popup( '../', null, null, SetFileField ) ;
+            //
+            // The "popup" function can also accept an object as the only argument.
+            // CKFinder.popup( { basePath : '../', selectActionFunction : SetFileField } ) ;
+        }
+
+        // This is a sample function which is called when a file is selected in CKFinder.
+        function SetFileField( fileUrl )
+        {
+            document.getElementById( 'xFilePath' ).value = fileUrl;
+            document.getElementById( 'staffimg' ).src = fileUrl;
+
+        }
+
+    </script>
 </head>
 <body class="theme-red">
 <!-- Page Loader -->
@@ -140,53 +175,82 @@
     <!-- #END# Left Sidebar -->
 </section>
 
-
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG</h2>
+            <h2>ORGANIZATION HEAD</h2>
         </div>
-        <!-- Basic Table -->
+        <!-- Basic Validation -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
+                        <h2>EDIT DETAILS</h2>
 
-                        <a href="{{ url('createblogpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
                     </div>
-                    <div class="body table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>TITLE</th>
-                                <th>PUB-DATA</th>
-                                <th>ACTION</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                $i=1;
-                            ?>
-
-                            @foreach ($blogpost as $blogitem)
-                                <tr>
-                                    <th scope="row">{{ $i++ }}</th>
-                                    <td>{{$blogitem['title']}}</td>
-                                    <td>{{$blogitem['pubdate']}}</td>
-                                    <td><a href="{{url('editblog',$blogitem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
-                                        <a href="{{url('deleteblog',$blogitem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
-                                    </td>
-                                </tr>
-                            @endforeach
-
-                            </tbody>
-                        </table>
+                    <div class="body">
+                        <form id="form_validation" method="POST" action="{{ url('orghead') }}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{$staff['name_en']}}" name="name_en" required >
+                                            <label class="form-label">Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{$staff['name_np']}}" name="name_np" required >
+                                            <label class="form-label">नाम</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" name="position_en" value="{{$staff['position_en']}}" required minlength="5">
+                                                <label class="form-label">Post</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" name="position_np" value="{{$staff['position_np']}}" required minlength="5">
+                                            <label class="form-label">पद</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                        <a href="javascript:void(0);" class="thumbnail">
+                                            <img id="staffimg" src="{{ $staff['imgpath'] }}" class="img-responsive">
+                                        </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="xFilePath"  name="imgpath" value="{{ $staff['imgpath'] }}" type="text" size="60" required />
+                                            <input type="button"  class="btn bg-teal waves-effect" value="Browse Server" onclick="BrowseServer();" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect" type="submit">UPDATE</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Basic Table -->
+        <!-- #END# Basic Validation -->
     </div>
 </section>
 
@@ -208,6 +272,15 @@
 <!-- Jquery CountTo Plugin Js -->
 <script src="asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
 
+<!-- Jquery Validation Plugin Css -->
+<script src="asset/admin/plugins/jquery-validation/jquery.validate.js"></script>
+
+<!-- JQuery Steps Plugin Js -->
+<script src="asset/admin/plugins/jquery-steps/jquery.steps.js"></script>
+
+<!-- Sweet Alert Plugin Js -->
+<script src="asset/admin/plugins/sweetalert/sweetalert.min.js"></script>
+
 <!-- Morris Plugin Js -->
 <script src="asset/admin/plugins/raphael/raphael.min.js"></script>
 <script src="asset/admin/plugins/morrisjs/morris.js"></script>
@@ -219,6 +292,7 @@
 <!-- Custom Js -->
 <script src="asset/admin/js/admin.js"></script>
 <script src="asset/admin/js/pages/index.js"></script>
+<script src="asset/admin/js/pages/forms/form-validation.js"></script>
 
 <!-- Demo Js -->
 <script src="asset/admin/js/demo.js"></script>

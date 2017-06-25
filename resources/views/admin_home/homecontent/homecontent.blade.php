@@ -14,22 +14,29 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="asset/admin/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../asset/admin/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="asset/admin/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Sweet Alert Css -->
+    <link href="../asset/admin/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <link href="../asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="asset/admin/css/style.css" rel="stylesheet">
+    <link href="../asset/admin/css/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+    <link href="../asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+
+
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
 </head>
 <body class="theme-red">
 <!-- Page Loader -->
@@ -140,88 +147,97 @@
     <!-- #END# Left Sidebar -->
 </section>
 
-
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG</h2>
+            <h2>HOME CONTENT</h2>
         </div>
-        <!-- Basic Table -->
+        <!-- Basic Validation -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
+                        <h2>EDIT CONTENT</h2>
 
-                        <a href="{{ url('createblogpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
                     </div>
-                    <div class="body table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>TITLE</th>
-                                <th>PUB-DATA</th>
-                                <th>ACTION</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                $i=1;
-                            ?>
+                    <div class="body">
+                        <form id="form_validation" method="post" action="{{url('homecontent')}}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <h6>Content In English</h6>
+                                    <textarea id="ckeditor1" name="ckeditor1" class="ckeditor"></textarea>
+                                    <script type="text/javascript">
+                                        var editor = CKEDITOR.replace( 'ckeditor1' );
+                                        CKEDITOR.instances.ckeditor1.setData( ' {!! $homecontent['content_en'] !!} ');
+                                        CKFinder.setupCKEditor( editor, '/ckfinder/' );
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <h6>Content In Nepali</h6>
+                                    <textarea id="ckeditor2" name="ckeditor2" class="ckeditor"></textarea>
+                                    <script type="text/javascript">
+                                        var editor = CKEDITOR.replace( 'ckeditor2' );
+                                        CKEDITOR.instances.ckeditor2.setData( ' {!! $homecontent['content_np'] !!} ');
+                                        CKFinder.setupCKEditor( editor, '/ckfinder/' );
+                                    </script>
 
-                            @foreach ($blogpost as $blogitem)
-                                <tr>
-                                    <th scope="row">{{ $i++ }}</th>
-                                    <td>{{$blogitem['title']}}</td>
-                                    <td>{{$blogitem['pubdate']}}</td>
-                                    <td><a href="{{url('editblog',$blogitem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
-                                        <a href="{{url('deleteblog',$blogitem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
-                                    </td>
-                                </tr>
-                            @endforeach
-
-                            </tbody>
-                        </table>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect" type="submit">UPDATE</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Basic Table -->
+        <!-- #END# Basic Validation -->
     </div>
 </section>
 
 <!-- Jquery Core Js -->
-<script src="asset/admin/plugins/jquery/jquery.min.js"></script>
+<script src="../asset/admin/plugins/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core Js -->
-<script src="asset/admin/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="../asset/admin/plugins/bootstrap/js/bootstrap.js"></script>
 
 <!-- Select Plugin Js -->
-<script src="asset/admin/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<script src="../asset/admin/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
 <!-- Slimscroll Plugin Js -->
-<script src="asset/admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="../asset/admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
 <!-- Waves Effect Plugin Js -->
-<script src="asset/admin/plugins/node-waves/waves.js"></script>
+<script src="../asset/admin/plugins/node-waves/waves.js"></script>
 
 <!-- Jquery CountTo Plugin Js -->
-<script src="asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
+<script src="../asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
+
+<!-- Jquery Validation Plugin Css -->
+<script src="../asset/admin/plugins/jquery-validation/jquery.validate.js"></script>
+
+<!-- JQuery Steps Plugin Js -->
+<script src="../asset/admin/plugins/jquery-steps/jquery.steps.js"></script>
+
+<!-- Sweet Alert Plugin Js -->
+<script src="../asset/admin/plugins/sweetalert/sweetalert.min.js"></script>
 
 <!-- Morris Plugin Js -->
-<script src="asset/admin/plugins/raphael/raphael.min.js"></script>
-<script src="asset/admin/plugins/morrisjs/morris.js"></script>
+<script src="../asset/admin/plugins/raphael/raphael.min.js"></script>
+<script src="../asset/admin/plugins/morrisjs/morris.js"></script>
 
 
 <!-- Sparkline Chart Plugin Js -->
-<script src="asset/admin/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="../asset/admin/plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
 <!-- Custom Js -->
-<script src="asset/admin/js/admin.js"></script>
-<script src="asset/admin/js/pages/index.js"></script>
+<script src="../asset/admin/js/admin.js"></script>
+<script src="../asset/admin/js/pages/index.js"></script>
+<script src="../asset/admin/js/pages/forms/form-validation.js"></script>
 
 <!-- Demo Js -->
-<script src="asset/admin/js/demo.js"></script>
+<script src="../asset/admin/js/demo.js"></script>
 </body>
 
 </html>

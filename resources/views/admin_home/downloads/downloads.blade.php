@@ -31,6 +31,7 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
 </head>
+
 <body class="theme-red">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
@@ -92,8 +93,8 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
-                    <a href="">
+                <li>
+                    <a href="{{ url('admin') }}">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
@@ -116,8 +117,8 @@
                         <span>Career</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ url('admindownloads') }}">
+                <li class="active">
+                    <a href="">
                         <i class="material-icons">cloud_download</i>
                         <span>Downloads</span>
                     </a>
@@ -140,11 +141,10 @@
     <!-- #END# Left Sidebar -->
 </section>
 
-
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG</h2>
+            <h2>DOWNLOADS</h2>
         </div>
         <!-- Basic Table -->
         <div class="row clearfix">
@@ -152,7 +152,7 @@
                 <div class="card">
                     <div class="header">
 
-                        <a href="{{ url('createblogpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
+                        <a href="{{ url('createdownload') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW DOWNLOAD</button></a>
                     </div>
                     <div class="body table-responsive">
                         <table class="table">
@@ -166,16 +166,16 @@
                             </thead>
                             <tbody>
                             <?php
-                                $i=1;
+                            $i=1;
                             ?>
 
-                            @foreach ($blogpost as $blogitem)
+                            @foreach ($download as $downloaditem)
                                 <tr>
                                     <th scope="row">{{ $i++ }}</th>
-                                    <td>{{$blogitem['title']}}</td>
-                                    <td>{{$blogitem['pubdate']}}</td>
-                                    <td><a href="{{url('editblog',$blogitem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
-                                        <a href="{{url('deleteblog',$blogitem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
+                                    <td>{{$downloaditem['title']}}</td>
+                                    <td>{{$downloaditem['pubdate']}}</td>
+                                    <td><a href="{{url('editdownload',$downloaditem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
+                                        <a href="{{url('deletedownload',$downloaditem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
                                     </td>
                                 </tr>
                             @endforeach

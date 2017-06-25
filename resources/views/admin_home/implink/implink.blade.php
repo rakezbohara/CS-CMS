@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -44,8 +43,7 @@
             // You can use the "CKFinder" class to render CKFinder in a page:
             var finder = new CKFinder();
             finder.basePath = '/asset/ckfinder/';	// The path for the installation of CKFinder (default = "/ckfinder/").
-            finder.rememberLastFolder = false;
-            finder.startupPath = "Images:/slideshow/";
+            finder.StartupPath = 'Images:/staff/'
             finder.selectActionFunction = SetFileField;
             finder.popup();
 
@@ -61,6 +59,8 @@
         function SetFileField( fileUrl )
         {
             document.getElementById( 'xFilePath' ).value = fileUrl;
+            document.getElementById( 'staffimg' ).src = fileUrl;
+
         }
 
     </script>
@@ -178,40 +178,154 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>SLIDE > CREATE</h2>
+            <h2>IMPORTANT LINKS</h2>
         </div>
         <!-- Basic Validation -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h2>CREATE NEW SLIDE</h2>
+                        <h2>EDIT LINKS</h2>
 
                     </div>
                     <div class="body">
-                        <form id="form_validation" method="POST" action="{{ url('createslide') }}" enctype="multipart/form-data">
+                        <form id="form_validation" method="POST" action="{{ url('implink') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input type="text" class="form-control" name="title" required >
-                                    <label class="form-label">Title</label>
+                            <h5>LINK 1</h5>
+                            <hr/>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink1['name_en'] }}" name="1name_en" required >
+                                            <label class="form-label">Link Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink1['name_np'] }}" name="1name_np" required >
+                                            <label class="form-label">लिंक नाम</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="desc" required minlength="5">
-                                    <label class="form-label">Description</label>
+                                    <input type="text" class="form-control" value="{{ $implink1['link'] }}" name="1link" required >
+                                    <label class="form-label">Link</label>
                                 </div>
                             </div>
-
+                            <hr/>
+                            <h5>LINK 2</h5>
+                            <hr/>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink2['name_en'] }}" name="2name_en" required >
+                                            <label class="form-label">Link Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink2['name_np'] }}" name="2name_np" required >
+                                            <label class="form-label">लिंक नाम</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input id="xFilePath"  name="imgpath" type="text" size="60" required />
-                                    <input type="button"  class="btn bg-teal waves-effect" value="Browse Server" onclick="BrowseServer();" />
+                                    <input type="text" class="form-control" value="{{ $implink2['link'] }}" name="2link" required >
+                                    <label class="form-label">Link</label>
                                 </div>
                             </div>
-                            <button class="btn btn-primary waves-effect" type="submit">CREATE</button>
+                            <hr/>
+                            <h5>LINK 3</h5>
+                            <hr/>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink3['name_en'] }}" name="3name_en" required >
+                                            <label class="form-label">Link Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink3['name_np'] }}" name="3name_np" required >
+                                            <label class="form-label">लिंक नाम</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" value="{{ $implink3['link'] }}" name="3link" required >
+                                    <label class="form-label">Link</label>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h5>LINK 4</h5>
+                            <hr/>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink4['name_en'] }}" name="4name_en" required >
+                                            <label class="form-label">Link Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink4['name_np'] }}" name="4name_np" required >
+                                            <label class="form-label">लिंक नाम</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" value="{{ $implink4['link'] }}" name="4link" required >
+                                    <label class="form-label">Link</label>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h5>LINK 5</h5>
+                            <hr/>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink5['name_en'] }}" name="5name_en" required >
+                                            <label class="form-label">Link Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" value="{{ $implink5['name_np'] }}" name="5name_np" required >
+                                            <label class="form-label">लिंक नाम</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" value="{{ $implink5['link'] }}" name="5link" required >
+                                    <label class="form-label">Link</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect" type="submit">UPDATE</button>
                         </form>
                     </div>
                 </div>

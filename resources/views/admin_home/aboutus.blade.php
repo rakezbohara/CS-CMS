@@ -30,7 +30,10 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckfinder/ckfinder.js"></script>
 </head>
+
 <body class="theme-red">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
@@ -92,14 +95,14 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
-                    <a href="">
+                <li>
+                    <a href="{{ url('admin') }}">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ url('adminaboutus') }}">
+                <li  class="active">
+                    <a href="">
                         <i class="material-icons">group</i>
                         <span>About Us</span>
                     </a>
@@ -140,53 +143,52 @@
     <!-- #END# Left Sidebar -->
 </section>
 
-
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG</h2>
+            <h2>ABOUT US</h2>
         </div>
-        <!-- Basic Table -->
+        <!-- Basic Validation -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
+                        <h2>EDIT ABOUT US</h2>
 
-                        <a href="{{ url('createblogpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
                     </div>
-                    <div class="body table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>TITLE</th>
-                                <th>PUB-DATA</th>
-                                <th>ACTION</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                $i=1;
-                            ?>
+                    <div class="body">
+                        <form id="form_validation" method="post" action="{{url('adminaboutus')}}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <h6>AboutUs In English</h6>
+                                    <textarea id="ckeditor1" name="ckeditor1" class="ckeditor"></textarea>
+                                    <script type="text/javascript">
+                                        var editor = CKEDITOR.replace( 'ckeditor1' );
+                                        CKEDITOR.instances.ckeditor1.setData( ' {!! $aboutus['content_en'] !!} ');
+                                        CKFinder.setupCKEditor( editor, '/ckfinder/' );
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <h6>AboutUs In Nepali</h6>
+                                    <textarea id="ckeditor2" name="ckeditor2" class="ckeditor"></textarea>
+                                    <script type="text/javascript">
+                                        var editor = CKEDITOR.replace( 'ckeditor2' );
+                                        CKEDITOR.instances.ckeditor2.setData( ' {!! $aboutus['content_np'] !!} ');
+                                        CKFinder.setupCKEditor( editor, '/ckfinder/' );
+                                    </script>
 
-                            @foreach ($blogpost as $blogitem)
-                                <tr>
-                                    <th scope="row">{{ $i++ }}</th>
-                                    <td>{{$blogitem['title']}}</td>
-                                    <td>{{$blogitem['pubdate']}}</td>
-                                    <td><a href="{{url('editblog',$blogitem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
-                                        <a href="{{url('deleteblog',$blogitem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
-                                    </td>
-                                </tr>
-                            @endforeach
-
-                            </tbody>
-                        </table>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect" type="submit">UPDATE</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Basic Table -->
+        <!-- #END# Basic Validation -->
     </div>
 </section>
 

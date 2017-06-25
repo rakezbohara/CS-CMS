@@ -30,6 +30,27 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+    <script src="../ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+
+        function BrowseServer()
+        {
+            // You can use the "CKFinder" class to render CKFinder in a page:
+            var finder = new CKFinder();
+            finder.basePath = '/asset/ckfinder/';	// The path for the installation of CKFinder (default = "/ckfinder/").
+            finder.rememberLastFolder = false;
+            finder.startupPath = "Images:/gallery/";
+            finder.popup();
+
+            // It can also be done in a single line, calling the "static"
+            // popup( basePath, width, height, selectFunction ) function:
+            // CKFinder.popup( '../', null, null, SetFileField ) ;
+            //
+            // The "popup" function can also accept an object as the only argument.
+            // CKFinder.popup( { basePath : '../', selectActionFunction : SetFileField } ) ;
+        }
+
+    </script>
 </head>
 <body class="theme-red">
 <!-- Page Loader -->
@@ -92,8 +113,8 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
-                    <a href="">
+                <li>
+                    <a href="{{ url('admin') }}">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
@@ -104,8 +125,8 @@
                         <span>About Us</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ url('admingallery') }}">
+                <li class="active">
+                    <a href="">
                         <i class="material-icons">collections</i>
                         <span>Gallery</span>
                     </a>
@@ -140,53 +161,14 @@
     <!-- #END# Left Sidebar -->
 </section>
 
-
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG</h2>
+            <h2>GALLERY SECTION</h2>
         </div>
-        <!-- Basic Table -->
-        <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="card">
-                    <div class="header">
+            <button id="popup-1-button" onclick="BrowseServer();" class="btn bg-teal waves-effect">OPEN GALLERY</button><br/><br/>
+        <p>Click on the button then your can change the galley content in gallery folder.</p>
 
-                        <a href="{{ url('createblogpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
-                    </div>
-                    <div class="body table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>TITLE</th>
-                                <th>PUB-DATA</th>
-                                <th>ACTION</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                $i=1;
-                            ?>
-
-                            @foreach ($blogpost as $blogitem)
-                                <tr>
-                                    <th scope="row">{{ $i++ }}</th>
-                                    <td>{{$blogitem['title']}}</td>
-                                    <td>{{$blogitem['pubdate']}}</td>
-                                    <td><a href="{{url('editblog',$blogitem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
-                                        <a href="{{url('deleteblog',$blogitem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
-                                    </td>
-                                </tr>
-                            @endforeach
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- #END# Basic Table -->
     </div>
 </section>
 

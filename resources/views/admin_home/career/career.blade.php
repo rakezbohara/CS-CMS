@@ -32,6 +32,7 @@
     <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
 </head>
 <body class="theme-red">
+
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
@@ -92,8 +93,8 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
-                    <a href="">
+                <li>
+                    <a href="{{ 'admin' }}">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
@@ -110,8 +111,8 @@
                         <span>Gallery</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ url('admincareer') }}">
+                <li class="active">
+                    <a href="">
                         <i class="material-icons">business_center</i>
                         <span>Career</span>
                     </a>
@@ -140,11 +141,10 @@
     <!-- #END# Left Sidebar -->
 </section>
 
-
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG</h2>
+            <h2>CAREER</h2>
         </div>
         <!-- Basic Table -->
         <div class="row clearfix">
@@ -152,7 +152,7 @@
                 <div class="card">
                     <div class="header">
 
-                        <a href="{{ url('createblogpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
+                        <a href="{{ url('createcareerpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
                     </div>
                     <div class="body table-responsive">
                         <table class="table">
@@ -160,22 +160,22 @@
                             <tr>
                                 <th>#</th>
                                 <th>TITLE</th>
-                                <th>PUB-DATA</th>
+                                <th>DEAD-LINE</th>
                                 <th>ACTION</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                                $i=1;
+                            $i=1;
                             ?>
 
-                            @foreach ($blogpost as $blogitem)
+                            @foreach ($career as $careeritem)
                                 <tr>
                                     <th scope="row">{{ $i++ }}</th>
-                                    <td>{{$blogitem['title']}}</td>
-                                    <td>{{$blogitem['pubdate']}}</td>
-                                    <td><a href="{{url('editblog',$blogitem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
-                                        <a href="{{url('deleteblog',$blogitem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
+                                    <td>{{$careeritem['title']}}</td>
+                                    <td>{{$careeritem['deadline']}}</td>
+                                    <td><a href="{{url('editcareer',$careeritem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
+                                        <a href="{{url('deletecareer',$careeritem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
                                     </td>
                                 </tr>
                             @endforeach

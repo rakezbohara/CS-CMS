@@ -22,6 +22,9 @@
     <!-- Animation Css -->
     <link href="asset/admin/plugins/animate-css/animate.css" rel="stylesheet" />
 
+    <!-- Sweet Alert Css -->
+    <link href="asset/admin/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
     <!-- Morris Chart Css-->
     <link href="asset/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
 
@@ -30,8 +33,15 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
+
+
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="ckfinder/ckfinder.js"></script>
 </head>
+
 <body class="theme-red">
+
+
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
@@ -92,8 +102,8 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
-                    <a href="">
+                <li>
+                    <a href="{{ 'admin' }}">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
@@ -110,8 +120,8 @@
                         <span>Gallery</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ url('admincareer') }}">
+                <li class="active">
+                    <a href="">
                         <i class="material-icons">business_center</i>
                         <span>Career</span>
                     </a>
@@ -140,53 +150,52 @@
     <!-- #END# Left Sidebar -->
 </section>
 
-
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>BLOG</h2>
+            <h2>CAREER > CREATE</h2>
         </div>
-        <!-- Basic Table -->
+        <!-- Basic Validation -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-
-                        <a href="{{ url('createblogpost') }}"> <button type="button" class="btn btn-primary waves-effect"><i class="material-icons">event_note</i> CREATE NEW POST</button></a>
+                        <h2>CREATE NEW POST</h2>
                     </div>
-                    <div class="body table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>TITLE</th>
-                                <th>PUB-DATA</th>
-                                <th>ACTION</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                $i=1;
-                            ?>
+                    <div class="body">
+                        <form id="form_validation" method="POST" action="{{ url('createcareerpost') }}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" name="title" required minlength="5">
+                                    <label class="form-label">Title</label>
+                                </div>
+                            </div>
 
-                            @foreach ($blogpost as $blogitem)
-                                <tr>
-                                    <th scope="row">{{ $i++ }}</th>
-                                    <td>{{$blogitem['title']}}</td>
-                                    <td>{{$blogitem['pubdate']}}</td>
-                                    <td><a href="{{url('editblog',$blogitem['id'])}}"><button type="button" class="btn btn-warning waves-effect">EDIT</button></a>
-                                        <a href="{{url('deleteblog',$blogitem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
-                                    </td>
-                                </tr>
-                            @endforeach
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <h6>Content</h6>
+                                    <textarea id="ckeditor" name="ckeditor" class="ckeditor"></textarea>
+                                    <script type="text/javascript">
+                                        var editor = CKEDITOR.replace( 'ckeditor' );
+                                        CKFinder.setupCKEditor( editor, '/ckfinder/' );
+                                    </script>
 
-                            </tbody>
-                        </table>
+                                </div>
+                            </div>
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" value="{{ date("y-m-d") }}" name="deadline" required>
+                                    <label class="form-label">Dead-Line</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect" type="submit">CREATE</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Basic Table -->
+        <!-- #END# Basic Validation -->
     </div>
 </section>
 
@@ -208,6 +217,15 @@
 <!-- Jquery CountTo Plugin Js -->
 <script src="asset/admin/plugins/jquery-countto/jquery.countTo.js"></script>
 
+<!-- Jquery Validation Plugin Css -->
+<script src="asset/admin/plugins/jquery-validation/jquery.validate.js"></script>
+
+<!-- JQuery Steps Plugin Js -->
+<script src="asset/admin/plugins/jquery-steps/jquery.steps.js"></script>
+
+<!-- Sweet Alert Plugin Js -->
+<script src="asset/admin/plugins/sweetalert/sweetalert.min.js"></script>
+
 <!-- Morris Plugin Js -->
 <script src="asset/admin/plugins/raphael/raphael.min.js"></script>
 <script src="asset/admin/plugins/morrisjs/morris.js"></script>
@@ -219,6 +237,7 @@
 <!-- Custom Js -->
 <script src="asset/admin/js/admin.js"></script>
 <script src="asset/admin/js/pages/index.js"></script>
+<script src="asset/admin/js/pages/forms/form-validation.js"></script>
 
 <!-- Demo Js -->
 <script src="asset/admin/js/demo.js"></script>

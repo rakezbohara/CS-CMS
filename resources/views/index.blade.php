@@ -172,7 +172,7 @@
             <!--person info ends-->
         </div>
         <div class="marq col-sm-12 right">
-            <marquee direction="left" behavior="scroll"><a href="#">Notice 1</a> <a href="#">Notice 2</a> <a href="#">Notice 3</a> <a href="#">Notice 4</a></marquee>
+            <marquee onMouseOver="this.stop()" onMouseOut="this.start()" direction="left" behavior="scroll"><a href="#">Notice 1</a> <a href="#">Notice 2</a> <a href="#">Notice 3</a> <a href="#">Notice 4</a></marquee>
         </div>
         <hr/>
         <hr/>
@@ -199,27 +199,26 @@
                 <hr/>
                 <div class="item">
                     <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
+
                 </div>
                 <hr/>
                 <div class="item">
                     <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
+
                 </div>
                 <hr/>
                 <div class="item">
                     <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
+
                 </div>
                 <hr/>
                 <div class="item">
                     <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
+
                 </div>
                 <hr/>
                 <div class="item">
                     <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
                 </div>
                 <hr/>
 
