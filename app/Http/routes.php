@@ -13,11 +13,11 @@
 
 Route::get('/', function () {
     Session::set('applocale', 'np');
-    return view('index');
+    return view('frontend.index');
 });
 Route::get('/aboutus', function () {
     App::setLocale(Session::get('applocale'));
-    return view('aboutus');
+    return view('frontend.aboutus');
 });
 Route::get('blog', function () {
     App::setLocale(Session::get('applocale'));
@@ -118,6 +118,7 @@ Route::post('editdownload/{downloaditem}','AdminDownloadController@saveeditdownl
 Route::get('/editdownload/{downloaditem}','AdminDownloadController@editdownload')->middleware('auth');
 Route::get('/deletedownload/{downloaditem}','AdminDownloadController@deletedownload')->middleware('auth');
 
-
+//Trial
+Route::get('gallery','HomeController@gallery');
 
 
