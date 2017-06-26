@@ -127,7 +127,7 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active">
-                    <a href="">
+                    <a href="admin">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>

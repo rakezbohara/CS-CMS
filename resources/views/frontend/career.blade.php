@@ -48,10 +48,10 @@
 
                 <ul class="nav navbar-nav white">
                     <li><a href="{{ url('/') }}"> @lang('welcome.menu1')</a></li>
-                    <li class="active"><a href="{{ url('aboutus') }}">@lang('welcome.menu2')</a></li>
+                    <li><a href="{{ url('aboutus') }}">@lang('welcome.menu2')</a></li>
                     <li><a href="{{ url('gallery') }}">@lang('welcome.menu3')</a></li>
                     <li><a href="{{ url('services') }}">@lang('welcome.menu4')</a></li>
-                    <li><a href="{{ url('career') }}">@lang('welcome.menu5')</a></li>
+                    <li class="active"><a href="{{ url('career') }}">@lang('welcome.menu5')</a></li>
                     <li><a href="{{ url('blog') }}">@lang('welcome.menu6')</a></li>
                     <li><a href="{{ url('download') }}">@lang('welcome.menu7')</a></li>
                     <li><a href="{{ url('contact') }}">@lang('welcome.menu8')</a></li>
@@ -60,57 +60,69 @@
         </div>
     </div>
 </nav>
-
 <div class="container">
+
+
     <div class="row">
         <div class="col-sm-8">
-            <div class="body">
-                <div class="panel-heading">
+
+            @foreach($career as $careeritem)
+            <div class="articlethumb">
+                <div class="topic">
+                    {{ $careeritem['title'] }}<span style="color:red" class="glyphicon glyphicon-fire"></span><span class="right">Dead Line: {{ $careeritem['deadline'] }}</span>
                 </div>
-                <div class="panel-body">
-                    @if(Session::get('applocale')=='en')
-                        {!! $aboutus['content_en'] !!}
-                    @else
-                        {!! $aboutus['content_np'] !!}
-                    @endif
+                <div class="desc">
+
+                    {!! $careeritem['content'] !!}
+
                 </div>
             </div>
-
+            @endforeach
         </div>
-        <div class="col-sm-4 right">
-            <!--notice section staet-->
-            <div class="col-sm-12 notice">
-                <span class="topic">News</span>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
-                </div>
+
+        <div class="col-sm-4">
+            <div class="topic articlethumb">
+                <form class="form-horizontal">
+                    <span class="glyphicon glyphicon-hand-right"> Apply Now</span>
+                    <hr/>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="name">Full Name:</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="username" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="email">Email:</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="pwd" placeholder="Enter Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="email">Apply for:</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="sel1">
+                                <option disabled selected hidden>-----</option>
+                                @foreach($career as $careeritem)
+                                    <option value ="{{ $careeritem['id'] }}" >{{ $careeritem['title'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="email">CV:</label>
+                        <div class="col-sm-8">
+                            <input type="file" class="form-control" id="cv">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default blue">Submit</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <!--notice section ends-->
-
         </div>
-        <hr/>
-        <hr/>
     </div>
 
     <hr/>
@@ -160,6 +172,9 @@
     </div>
 
 </div>
+
+
+
 <div class="bkg">
     <div class="row">
         <div class="col-sm-4">

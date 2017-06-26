@@ -4,28 +4,18 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Light Gallery Plugin Css -->
     <link href="../asset/admin/plugins/light-gallery/css/lightgallery.css" rel="stylesheet">
-    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="../asset/admin/css/themes/all-themes.css" rel="stylesheet" />
-
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../asset/css/font-awesome.min.css">
     <link rel="stylesheet" href="../asset/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-   {{-- Galley asset--}}
-
 </head>
 <body>
 <div class="right lang">
-    @foreach(View::getFinder()->views as $view=>$viewpath )
-
-    @endforeach
-    <a href="/en/{{$view}}">English</a> || <a href="/np/{{$view}}">नेपाली</a>
+    <a href="{{ url('en') }}">English</a> || <a href="{{ url('np') }}">नेपाली</a>
 </div>
 <div class="row">
     <div class = "col-sm-6">
@@ -60,14 +50,14 @@
             <div class="collapse navbar-collapse" id="myNavbar">
 
                 <ul class="nav navbar-nav white">
-                    <li><a href="/"> @lang('welcome.menu1')</a></li>
-                    <li class="active"><a href="#">@lang('welcome.menu2')</a></li>
-                    <li><a href="#">@lang('welcome.menu3')</a></li>
-                    <li><a href="#">@lang('welcome.menu4')</a></li>
-                    <li><a href="#">@lang('welcome.menu5')</a></li>
-                    <li><a href="/blog">@lang('welcome.menu6')</a></li>
-                    <li><a href="#">@lang('welcome.menu7')</a></li>
-                    <li><a href="/sample">@lang('welcome.menu8')</a></li>
+                    <li><a href="{{ url('/') }}"> @lang('welcome.menu1')</a></li>
+                    <li><a href="{{ url('aboutus') }}">@lang('welcome.menu2')</a></li>
+                    <li class="active"><a href="{{ url('gallery') }}">@lang('welcome.menu3')</a></li>
+                    <li><a href="{{ url('services') }}">@lang('welcome.menu4')</a></li>
+                    <li><a href="{{ url('career') }}">@lang('welcome.menu5')</a></li>
+                    <li><a href="{{ url('blog') }}">@lang('welcome.menu6')</a></li>
+                    <li><a href="{{ url('download') }}">@lang('welcome.menu7')</a></li>
+                    <li><a href="{{ url('contact') }}">@lang('welcome.menu8')</a></li>
                 </ul>
             </div>
         </div>
@@ -92,6 +82,7 @@
 
 
     {{--Main Body Ends--}}
+    <hr/>
     <div class="row">
         <div class="col-sm-4">
             <div class="notice twit">
@@ -101,37 +92,38 @@
         <div class="col-sm-4">
             <div class="notice">
                 <span class="topic">Important Links</span>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
+                @if(Session::get('applocale')=='en')
+                    @foreach($implinks as $implinkitem)
+                        <hr/>
+                        <div class="item">
+                            <span class="title"><i class="fa fa-hand-o-right"></i><a href="{!! $implinkitem['link'] !!}" target="_blank">{{ $implinkitem['name_en'] }}</a></span><br/>
+                        </div>
+                    @endforeach
+                @else
+                    @foreach($implinks as $implinkitem)
+                        <hr/>
+                        <div class="item">
+                            <span class="title"><i class="fa fa-hand-o-right"></i><a href="{!! $implinkitem['link'] !!}" target="_blank">{{ $implinkitem['name_np'] }}</a></span><br/>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="col-sm-4">
             <div class="notice">
+                <span class="topic">Downloads</span>
+                @foreach($download as $downloaditem)
+                    <hr/>
+                    <div class="item">
+                        <span class="title"><i class="fa fa-hand-o-right"></i><a href="{{ $downloaditem['filepath'] }}">{{ $downloaditem['title'] }}</a></span><br/>
+                        <span class="pubdate">{{ $downloaditem['pubdate'] }}</span>
+                    </div>
+                @endforeach
 
+                <hr/>
+                <div class="item">
+                    <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
+                </div>
             </div>
         </div>
     </div>
@@ -155,6 +147,5 @@
 <script src="../asset/admin/plugins/light-gallery/js/lightgallery-all.js"></script>
 <!-- Custom Js -->
 <script src="../asset/admin/js/pages/medias/image-gallery.js"></script>
-<script src="../asset/admin/js/admin.js"></script>
 </body>
 </html>

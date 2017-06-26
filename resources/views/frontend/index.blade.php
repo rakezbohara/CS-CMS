@@ -12,10 +12,7 @@
 </head>
 <body>
 <div class="right lang">
-    @foreach(View::getFinder()->views as $view=>$viewpath )
-
-    @endforeach
-    <a href="/en/{{$view}}">English</a> || <a href="/np/{{$view}}">नेपाली</a>
+    <a href="{{ url('en') }}">English</a> || <a href="{{ url('np') }}">नेपाली</a>
 </div>
 <div class="row">
     <div class = "col-sm-6">
@@ -50,14 +47,14 @@
             <div class="collapse navbar-collapse" id="myNavbar">
 
                 <ul class="nav navbar-nav white">
-                    <li class="active"><a href="#"> @lang('welcome.menu1')</a></li>
-                    <li><a href="/aboutus">@lang('welcome.menu2')</a></li>
-                    <li><a href="#">@lang('welcome.menu3')</a></li>
-                    <li><a href="#">@lang('welcome.menu4')</a></li>
-                    <li><a href="#">@lang('welcome.menu5')</a></li>
-                    <li><a href="/blog">@lang('welcome.menu6')</a></li>
-                    <li><a href="#">@lang('welcome.menu7')</a></li>
-                    <li><a href="/sample">@lang('welcome.menu8')</a></li>
+                    <li class="active"><a href="{{ url('/') }}"> @lang('welcome.menu1')</a></li>
+                    <li><a href="{{ url('aboutus') }}">@lang('welcome.menu2')</a></li>
+                    <li><a href="{{ url('gallery') }}">@lang('welcome.menu3')</a></li>
+                    <li><a href="{{ url('services') }}">@lang('welcome.menu4')</a></li>
+                    <li><a href="{{ url('career') }}">@lang('welcome.menu5')</a></li>
+                    <li><a href="{{ url('blog') }}">@lang('welcome.menu6')</a></li>
+                    <li><a href="{{ url('download') }}">@lang('welcome.menu7')</a></li>
+                    <li><a href="{{ url('contact') }}">@lang('welcome.menu8')</a></li>
                 </ul>
             </div>
         </div>
@@ -80,36 +77,22 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Chania">
+                        <img src="{{ $slideshow[0]['imgpath'] }}" alt="Chania">
                         <div class="carousel-caption">
-                            <h3>Chania</h3>
-                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                            <h3>{{ $slideshow[0]['title'] }}</h3>
+                            <p>{{ $slideshow[0]['desc'] }}</p>
                         </div>
                     </div>
+                    @for($i = 1 ; $i<count($slideshow);$i++)
+                        <div class="item">
+                        <img src="{{ $slideshow[$i]['imgpath'] }}" alt="Chania">
+                            <div class="carousel-caption">
+                                <h3>{{  $slideshow[$i]['title'] }}</h3>
+                                <p>{{  $slideshow[$i]['desc'] }}</p>
+                            </div>
+                        </div>
+                    @endfor
 
-                    <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Chania">
-                        <div class="carousel-caption">
-                            <h3>Chania</h3>
-                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Flower">
-                        <div class="carousel-caption">
-                            <h3>Flowers</h3>
-                            <p>Beautiful flowers in Kolymbari, Crete.</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="https://www.w3schools.com/bootstrap/img_flower2.jpg" alt="Flower">
-                        <div class="carousel-caption">
-                            <h3>Flowers</h3>
-                            <p>Beautiful flowers in Kolymbari, Crete.</p>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Left and right controls -->
@@ -128,26 +111,13 @@
             <!--notice section staet-->
             <div class="col-sm-6 notice">
                 <span class="topic">News</span>
+                @foreach($blogpost as $blogitem)
                 <hr/>
                 <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
+                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">{{ $blogitem['title'] }}</a></span><br/>
+                    <span class="pubdate">{{ $blogitem['pubdate'] }}</span>
                 </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
+                @endforeach
                 <hr/>
                 <div class="item">
                     <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
@@ -157,22 +127,41 @@
             <!--person info starts-->
             <div class="col-sm-6  notice">
                 <div class="person">
-                    <img alt="Image" class="image img-responsive img-rounded left" src="http://ratcfw.gov.np/upload/downloadimages/profile/Bir%20Bahadur%20Chand%204.jpg">
-
-                    <span class="person-name">Name of person</span><br/>
-                    <span class="person-name">Post of person</span>
+                    <img alt="Image" class="image img-responsive img-rounded left" src="{{ $orghead['imgpath'] }}">
+                    @if(Session::get('applocale')=='en')
+                        <span class="person-name">{{ $orghead['name_en'] }}</span><br/>
+                        <span class="person-name">{{ $orghead['position_en'] }}</span>
+                    @else
+                        <span class="person-name">{{ $orghead['name_np'] }}</span><br/>
+                        <span class="person-name">{{ $orghead['position_np'] }}</span>
+                        @endif
                 </div>
                 <hr/>
                 <div class="person">
-                    <img alt="Image" class="image img-responsive img-rounded left" src="http://ratcfw.gov.np/upload/downloadimages/profile/Bir%20Bahadur%20Chand%204.jpg">
-                    <span class="person-name">Name of person</span><br/>
-                    <span class="person-name">Post of person</span>
+                    <img alt="Image" class="image img-responsive img-rounded left" src="{{ $orgtechhead['imgpath'] }}">
+                    @if(Session::get('applocale')=='en')
+                        <span class="person-name">{{ $orgtechhead['name_en'] }}</span><br/>
+                        <span class="person-name">{{ $orgtechhead['position_en'] }}</span>
+                    @else
+                        <span class="person-name">{{ $orgtechhead['name_np'] }}</span><br/>
+                        <span class="person-name">{{ $orgtechhead['position_np'] }}</span>
+                    @endif
                 </div>
             </div>
             <!--person info ends-->
         </div>
         <div class="marq col-sm-12 right">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()" direction="left" behavior="scroll"><a href="#">Notice 1</a> <a href="#">Notice 2</a> <a href="#">Notice 3</a> <a href="#">Notice 4</a></marquee>
+            <marquee onMouseOver="this.stop()" onMouseOut="this.start()" direction="left" behavior="scroll">
+                    @if(Session::get('applocale')=='en')
+                        @foreach($marquee as $marqueeitem)
+                            <a href="#">{{ $marqueeitem['title_en'] }}</a>
+                        @endforeach
+                    @else
+                        @foreach($marquee as $marqueeitem)
+                            <a href="#">{{ $marqueeitem['title_np'] }}</a>
+                        @endforeach
+                    @endif
+            </marquee>
         </div>
         <hr/>
         <hr/>
@@ -180,13 +169,18 @@
 
     <div class="body">
         <div class="panel-heading">
-            <h3 class="topic">Hamro barema kei kura</h3>
         </div>
         <div class="panel-body">
-            alksndknsdhcj sgdgjfgusgd cgsjdgfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali gfugs gkugshkdjfh haskjdhf hs idhf sdgufghlsaifhasdifou asiudgfhaolihlaihl8hf uhgsydfgiahsdiegiy gasugdfoau iugsagf asoyfgia sudhf gajsgdifu aohkhf7yw egjao9ugfe8ygfbadtf uyhsudgfi7asoeu gyueiasyefoh gasidgfalhi8h9kabfkuhlqkwhefj yfuewhjbfsia uiyfhaiuh8hjafuashhf iaushdfali
+            @if(Session::get('applocale')=='en')
+                {!! $homecontent['content_en'] !!}
+            @else
+                {!! $homecontent['content_np'] !!}
+            @endif
         </div>
     </div>
 
+
+    <hr/>
     <div class="row">
         <div class="col-sm-4">
             <div class="notice twit">
@@ -196,40 +190,38 @@
         <div class="col-sm-4">
             <div class="notice">
                 <span class="topic">Important Links</span>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i><a href="">Title of the news goes here</a></span><br/>
-                </div>
-                <hr/>
-
-
-
-
+                @if(Session::get('applocale')=='en')
+                    @foreach($implinks as $implinkitem)
+                        <hr/>
+                        <div class="item">
+                            <span class="title"><i class="fa fa-hand-o-right"></i><a href="{!! $implinkitem['link'] !!}" target="_blank">{{ $implinkitem['name_en'] }}</a></span><br/>
+                        </div>
+                    @endforeach
+                @else
+                    @foreach($implinks as $implinkitem)
+                        <hr/>
+                        <div class="item">
+                            <span class="title"><i class="fa fa-hand-o-right"></i><a href="{!! $implinkitem['link'] !!}" target="_blank">{{ $implinkitem['name_np'] }}</a></span><br/>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="col-sm-4">
             <div class="notice">
+                <span class="topic">Downloads</span>
+                @foreach($download as $downloaditem)
+                    <hr/>
+                    <div class="item">
+                        <span class="title"><i class="fa fa-hand-o-right"></i><a href="{{ $downloaditem['filepath'] }}">{{ $downloaditem['title'] }}</a></span><br/>
+                        <span class="pubdate">{{ $downloaditem['pubdate'] }}</span>
+                    </div>
+                @endforeach
 
+                <hr/>
+                <div class="item">
+                    <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
+                </div>
             </div>
         </div>
     </div>

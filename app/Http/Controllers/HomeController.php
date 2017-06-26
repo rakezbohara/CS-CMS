@@ -28,13 +28,4 @@ class HomeController extends Controller
         return view('admin_home.dashboard');
     }
 
-    public function gallery(){
-        $images = '';
-        foreach (File::allFiles(public_path() . '/ckfinder/userfiles/images/gallery/') as $file)
-        {
-            $filename = $file->getRelativePathName();
-            $images[] = $filename;
-        }
-        return view('frontend.gallery',compact('images'));
-    }
 }

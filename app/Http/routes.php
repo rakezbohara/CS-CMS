@@ -11,33 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    Session::set('applocale', 'np');
-    return view('frontend.index');
-});
-Route::get('/aboutus', function () {
-    App::setLocale(Session::get('applocale'));
-    return view('frontend.aboutus');
-});
-Route::get('blog', function () {
-    App::setLocale(Session::get('applocale'));
-    return view('blog');
-});
+Route::get('/','FrontEndController@index');
+Route::get('aboutus','FrontEndController@aboutus');
+Route::get('gallery','FrontEndController@gallery');
+Route::get('blog', 'FrontEndController@blog');
+Route::get('career', 'FrontEndController@career');
+
 Route::get('welcome', function () {
     return view('firstpage');
 });
-Route::get('en/{page}', function ($page) {
-    App::setLocale('en');
-    Route::currentRouteName();
-    Session::set('applocale', 'en');
-    return view($page);
-});
-Route::get('np/{page}', function ($page) {
-    App::setLocale('np');
-    Session::set('applocale', 'np');
-    return view($page);
-    //
-});
+Route::get('en','FrontEndController@en');
+Route::get('np','FrontEndController@np');
+
 Route::get('sample', function () {
     App::setLocale(Session::get('applocale'));
     return view('samplepage' );
@@ -118,7 +103,6 @@ Route::post('editdownload/{downloaditem}','AdminDownloadController@saveeditdownl
 Route::get('/editdownload/{downloaditem}','AdminDownloadController@editdownload')->middleware('auth');
 Route::get('/deletedownload/{downloaditem}','AdminDownloadController@deletedownload')->middleware('auth');
 
-//Trial
-Route::get('gallery','HomeController@gallery');
+
 
 

@@ -48,11 +48,11 @@
 
                 <ul class="nav navbar-nav white">
                     <li><a href="{{ url('/') }}"> @lang('welcome.menu1')</a></li>
-                    <li class="active"><a href="{{ url('aboutus') }}">@lang('welcome.menu2')</a></li>
+                    <li><a href="{{ url('aboutus') }}">@lang('welcome.menu2')</a></li>
                     <li><a href="{{ url('gallery') }}">@lang('welcome.menu3')</a></li>
                     <li><a href="{{ url('services') }}">@lang('welcome.menu4')</a></li>
                     <li><a href="{{ url('career') }}">@lang('welcome.menu5')</a></li>
-                    <li><a href="{{ url('blog') }}">@lang('welcome.menu6')</a></li>
+                    <li class="active"><a href="{{ url('blog') }}">@lang('welcome.menu6')</a></li>
                     <li><a href="{{ url('download') }}">@lang('welcome.menu7')</a></li>
                     <li><a href="{{ url('contact') }}">@lang('welcome.menu8')</a></li>
                 </ul>
@@ -60,57 +60,30 @@
         </div>
     </div>
 </nav>
-
 <div class="container">
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="body">
-                <div class="panel-heading">
+    @foreach($blogpost as $blogpostitem)
+    <div class="articlethumb">
+        <div class="topic">
+            {{ $blogpostitem['title'] }}<span class="right">{{ $blogpostitem['pubdate'] }}</span>
+        </div>
+        <div class="desc">
+            <div class="row">
+                <div class="col-sm-10">
+                    {{ substr(strip_tags($blogpostitem['content']),0,300) }}<a href="#">See More</a>
                 </div>
-                <div class="panel-body">
-                    @if(Session::get('applocale')=='en')
-                        {!! $aboutus['content_en'] !!}
-                    @else
-                        {!! $aboutus['content_np'] !!}
-                    @endif
+                <div class="col-sm-2">
+
                 </div>
             </div>
-
         </div>
-        <div class="col-sm-4 right">
-            <!--notice section staet-->
-            <div class="col-sm-12 notice">
-                <span class="topic">News</span>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
-                </div>
-            </div>
-            <!--notice section ends-->
+    </div>
+    @endforeach
 
-        </div>
-        <hr/>
-        <hr/>
+
+    <div align="center">
+        <ul class="pagination">
+            {{ $blogpost->links() }}
+        </ul>
     </div>
 
     <hr/>
@@ -160,6 +133,9 @@
     </div>
 
 </div>
+
+
+
 <div class="bkg">
     <div class="row">
         <div class="col-sm-4">

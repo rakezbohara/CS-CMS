@@ -1,6 +1,7 @@
 .blue{
-	
+
 	background: #009688;
+	color: #fff;
 }
 .gap{
 	margin-top: 15px;
@@ -18,13 +19,13 @@
     background-color: #26A69A;
 }
 .navbar-nav > li > a, .navbar-brand {
-    padding-top:4px !important; 
+    padding-top:4px !important;
     padding-bottom:4px !important;
     height: 32px;
 }
 .navbar {min-height:32px !important;}
 ul.nav li.dropdown:hover > ul.dropdown-menu {
-    display: block;    
+    display: block;
 }
 
 .left {
@@ -140,4 +141,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	padding: 5px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+.white{
+	color: #fff;
 }
