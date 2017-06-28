@@ -81,29 +81,16 @@
             <!--notice section staet-->
             <div class="col-sm-12 notice">
                 <span class="topic">News</span>
+                @foreach($blogpost as $blogitem)
+                    <hr/>
+                    <div class="item">
+                        <span class="title"><i class="fa fa-hand-o-right"></i><a href="{{ url('blogitem',$blogitem['id']) }}">{{ $blogitem['title'] }}</a></span><br/>
+                        <span class="pubdate">{{ $blogitem['pubdate'] }}</span>
+                    </div>
+                @endforeach
                 <hr/>
                 <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span class="title"><i class="fa fa-hand-o-right"></i>Title od the news goes here</span><br/>
-                    <span class="pubdate">2072-12-12</span>
-                </div>
-                <hr/>
-                <div class="item">
-                    <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
+                    <span ><a class="seemore" href="{{ url('blog') }}">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
                 </div>
             </div>
             <!--notice section ends-->
@@ -153,7 +140,7 @@
 
                 <hr/>
                 <div class="item">
-                    <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
+                    <span ><a class="seemore" href="{{ url('download') }}">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
                 </div>
             </div>
         </div>

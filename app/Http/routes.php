@@ -16,6 +16,8 @@ Route::get('aboutus','FrontEndController@aboutus');
 Route::get('gallery','FrontEndController@gallery');
 Route::get('blog', 'FrontEndController@blog');
 Route::get('career', 'FrontEndController@career');
+Route::get('download','FrontEndController@downloads');
+Route::get('blogitem/{postid}','FrontEndController@blogitem');
 
 Route::get('welcome', function () {
     return view('firstpage');

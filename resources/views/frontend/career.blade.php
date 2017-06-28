@@ -165,7 +165,7 @@
 
                 <hr/>
                 <div class="item">
-                    <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
+                    <span ><a class="seemore" href="{{ url('download') }}">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
                 </div>
             </div>
         </div>

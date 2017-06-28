@@ -50,10 +50,10 @@ class FrontEndController extends Controller
     public function aboutus(){
         App::setLocale(Session::get('applocale'));
         $implinks = Implink::all();
+        $blogpost = blogpost::orderBy('id', 'desc')->take(4)->get();
         $download = Download::orderBy('id', 'desc')->take(4)->get();
         $aboutus = Aboutus::find(1);
-
-        return view('frontend.aboutus',compact('implinks','download','aboutus'));
+        return view('frontend.aboutus',compact('implinks','download','aboutus','blogpost'));
     }
     public function gallery(){
         $images = '';
@@ -84,5 +84,21 @@ class FrontEndController extends Controller
         $aboutus = Aboutus::find(1);
         $career = Career::all();
         return view('frontend.career',compact('implinks','download','aboutus','career'));
+    }
+    public function downloads(){
+        App::setLocale(Session::get('applocale'));
+        $implinks = Implink::all();
+        $blogpost = blogpost::orderBy('id', 'desc')->take(4)->get();
+        $download = Download::orderBy('id', 'desc')->take(4)->get();
+        $downloads = Download::paginate(8);
+        return view('frontend.downloads',compact('implinks','download','blogpost','downloads'));
+    }
+    public function blogitem($postid){
+        App::setLocale(Session::get('applocale'));
+        $implinks = Implink::all();
+        $blogpost = blogpost::orderBy('id', 'desc')->take(4)->get();
+        $download = Download::orderBy('id', 'desc')->take(4)->get();
+        $postitem = blogpost::find($postid);
+        return view('frontend.blogitem',compact('implinks','download','blogpost','postitem'));
     }
 }

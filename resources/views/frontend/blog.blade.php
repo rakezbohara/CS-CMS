@@ -64,12 +64,14 @@
     @foreach($blogpost as $blogpostitem)
     <div class="articlethumb">
         <div class="topic">
-            {{ $blogpostitem['title'] }}<span class="right">{{ $blogpostitem['pubdate'] }}</span>
+            <a href="{{ url('blogitem',$blogpostitem['id']) }}"> {{ $blogpostitem['title'] }} </a>
+
+            <span class="right">{{ $blogpostitem['pubdate'] }}</span>
         </div>
         <div class="desc">
             <div class="row">
                 <div class="col-sm-10">
-                    {{ substr(strip_tags($blogpostitem['content']),0,300) }}<a href="#">See More</a>
+                    {{ substr(strip_tags($blogpostitem['content']),0,300) }}<a href="{{ url('blogitem',$blogpostitem['id']) }}">See More</a>
                 </div>
                 <div class="col-sm-2">
 
@@ -126,7 +128,7 @@
 
                 <hr/>
                 <div class="item">
-                    <span ><a class="seemore" href="#">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
+                    <span ><a class="seemore" href="{{ url('download') }}">See More<i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i></a></span><br/>
                 </div>
             </div>
         </div>
