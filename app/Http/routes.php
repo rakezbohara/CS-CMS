@@ -16,6 +16,7 @@ Route::get('aboutus','FrontEndController@aboutus');
 Route::get('gallery','FrontEndController@gallery');
 Route::get('blog', 'FrontEndController@blog');
 Route::get('career', 'FrontEndController@career');
+Route::post('career', 'FrontEndController@savecareer');
 Route::get('download','FrontEndController@downloads');
 Route::get('blogitem/{postid}','FrontEndController@blogitem');
 
@@ -105,6 +106,10 @@ Route::post('editdownload/{downloaditem}','AdminDownloadController@saveeditdownl
 Route::get('/editdownload/{downloaditem}','AdminDownloadController@editdownload')->middleware('auth');
 Route::get('/deletedownload/{downloaditem}','AdminDownloadController@deletedownload')->middleware('auth');
 
+
+//Career Application
+Route::get('jobapply','AdminJobApplication@jobs')->middleware('auth');
+Route::get('deletecv/{cvid}','AdminJobApplication@deletejobs')->middleware('auth');
 
 
 

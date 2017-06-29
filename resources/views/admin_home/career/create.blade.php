@@ -132,6 +132,12 @@
                         <span>Downloads</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('jobapply') }}">
+                        <i class="material-icons">group_work</i>
+                        <span>Career Application</span>
+                    </a>
+                </li>
 
             </ul>
         </div>

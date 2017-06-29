@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+use Request;
 use Illuminate\Support\Facades\Session;
 use App\Slideshow;
 use App\blogpost;
@@ -13,6 +14,7 @@ use App\Implink;
 use App\Download;
 use App\Aboutus;
 use App\Career;
+use App\Jobapply;
 use Illuminate\Support\Facades\File;
 class FrontEndController extends Controller
 {
@@ -84,6 +86,20 @@ class FrontEndController extends Controller
         $aboutus = Aboutus::find(1);
         $career = Career::all();
         return view('frontend.career',compact('implinks','download','aboutus','career'));
+    }
+    public function savecareer(){
+        $input = Request::all();
+        $cvfile = $input['cvfile'];
+        $extension = $cvfile->getClientOriginalExtension();
+        $filename = uniqid().'.'.$extension;
+        $jobapply = new Jobapply();
+        $jobapply->name = $input['name'];
+        $jobapply->email = $input['email'];
+        $jobapply->jobname = $input['jobname'];
+        $jobapply->cvname = $filename;
+        $cvfile->move('uploads/cv',$filename);
+        $jobapply->save();
+        return redirect('career');
     }
     public function downloads(){
         App::setLocale(Session::get('applocale'));

@@ -31,7 +31,6 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="asset/admin/css/themes/all-themes.css" rel="stylesheet" />
 </head>
-
 <body class="theme-red">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
@@ -78,6 +77,7 @@
                 <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
                 <!-- #END# Call Search -->
 
+
                 <li><a href="{{ url('logout') }}" class="js-right-sidebar"><i class="material-icons">input</i></a> </li>
             </ul>
         </div>
@@ -92,8 +92,8 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
-                    <a href="">
+                <li>
+                    <a href="admin">
                         <i class="material-icons">home</i>
                         <span>Home</span>
                     </a>
@@ -122,7 +122,7 @@
                         <span>Downloads</span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="{{ url('jobapply') }}">
                         <i class="material-icons">group_work</i>
                         <span>Career Application</span>
@@ -146,104 +146,53 @@
     <!-- #END# Left Sidebar -->
 </section>
 
+
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>DASHBOARD</h2>
+            <h2>BLOG</h2>
         </div>
-
-        <!-- Widgets -->
+        <!-- Basic Table -->
         <div class="row clearfix">
-            <a href="{{ url('blogpost') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-pink hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">view_headline</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">BLOG</div>
-                        </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                    </div>
+                    <div class="body table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>NAME</th>
+                                <th>E-MAIL</th>
+                                <th>JOB NAME</th>
+                                <th>ACTION</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $i=1;
+                            ?>
+
+                            @foreach ($jobapply as $jobitem)
+                                <tr>
+                                    <th scope="row">{{ $i++ }}</th>
+                                    <td>{{$jobitem['name']}}</td>
+                                    <td>{{$jobitem['email']}}</td>
+                                    <td>{{$jobitem['jobname']}}</td>
+                                    <td><a href="uploads/cv/{{$jobitem['cvname']}} " target="_blank"><button type="button" class="btn btn-warning waves-effect">VIEW</button></a>
+                                        <a href="{{url('deletecv',$jobitem['id']) }}"><button type="button" class="btn btn-danger waves-effect">DELETE</button></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </a>
-            <a href="{{  url('slide') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-cyan hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">slideshow</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">SLIDE SHOW</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="{{  url('orghead') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-light-green hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">person_add</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">ORG. HEAD</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="{{  url('orgtechhead') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-orange hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">person_add</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">ORG. TECHNICAL HEAD</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="{{  url('marquee') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-pink hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">low_priority</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">MARQUEE</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="{{  url('homecontent') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-cyan hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">home</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">HOME CONTENT</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="{{  url('implink') }}">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-light-green hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">link</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">IMPORTANT LINKS</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            </div>
         </div>
-        <!-- #END# Widgets -->
-
-
-
-
+        <!-- #END# Basic Table -->
     </div>
 </section>
 
