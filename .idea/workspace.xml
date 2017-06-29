@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cbdb390-ad70-4570-82d3-5d385645fb25" name="Default" comment="Front End Pages-Initial">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminJobApplication.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Jobapply.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2017_06_29_054749_create_jobapplies_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin_home/career.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEndController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEndController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/aboutus.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/aboutus.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/blog/blogpost.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/blog/blogpost.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/blog/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/blog/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/blog/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/blog/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/career/career.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/career/career.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/career/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/career/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/career/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/career/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/downloads/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/downloads/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/downloads/downloads.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/downloads/downloads.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/downloads/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/downloads/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/gallery.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/gallery.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/homecontent/homecontent.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/homecontent/homecontent.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/implink/implink.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/implink/implink.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/marquee/marquee.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/marquee/marquee.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/slideshow/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/slideshow/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/slideshow/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/slideshow/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/slideshow/slideshow.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/slideshow/slideshow.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/staff/orghead.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/staff/orghead.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin_home/staff/orgtechhead.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin_home/staff/orgtechhead.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontend/career.blade.php" afterPath="$PROJECT_DIR$/resources/views/frontend/career.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -404,7 +376,7 @@
       <workItem from="1498455851321" duration="13329000" />
       <workItem from="1498541376573" duration="4602000" />
       <workItem from="1498628883487" duration="3431000" />
-      <workItem from="1498714083575" duration="8174000" />
+      <workItem from="1498714083575" duration="8873000" />
     </task>
     <task id="LOCAL-00001" summary="ckfinder working.">
       <created>1497506356930</created>
@@ -424,7 +396,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137475000" />
+    <option name="totallyTimeSpent" value="138174000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
