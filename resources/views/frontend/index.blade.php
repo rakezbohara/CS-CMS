@@ -18,7 +18,7 @@
     <div class = "col-sm-6">
         <div class="custom-head">
             <img class="left" height="90 "width="105" src="http://ddcsyangja.gov.np/wp-content/themes/ddc/img/ddc-demo.png">
-            <h1>फेदीखोला गाउपालिका कार्यालय</h1>
+            <h1>पोखरा लेखनाथ महानगर पालिका </h1>
             <h3>स्याङ्जा, नेपाल</h3>
         </div>
     </div>
