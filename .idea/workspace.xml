@@ -2,178 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cbdb390-ad70-4570-82d3-5d385645fb25" name="Default" comment="Front End Pages-Initial">
-      <change afterPath="$PROJECT_DIR$/public/asset/admin/js/morris.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/footercss/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin_home/impPhone/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin_home/impPhone/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin_home/layout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin_home/ostaff/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin_home/ostaff/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin_home/ostaff/staff.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin_home/setting.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin_home/waste.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/budget.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/layout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/orgchart.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/plan.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/reports.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/staff.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/multilang.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/multilang.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Download.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminDownloadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminDownloadController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminImplinkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminImplinkController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminJobApplication.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminJobApplication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminStaffController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminStaffController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEndController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEndController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2017_06_22_062120_create_staff_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2017_06_22_062120_create_staff_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2017_06_25_073807_create_downloads_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2017_06_29_054749_create_jobapplies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2017_06_29_054749_create_jobapplies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/cards/basic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/cards/colored.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/charts/chartjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/charts/flot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/charts/jquery-knob.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/charts/morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/charts/sparkline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/examples/forgot-password.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/examples/sign-in.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/examples/sign-up.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/forms/advanced-form-elements.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/forms/basic-form-elements.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/forms/editors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/forms/form-validation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/forms/form-wizard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/maps/google.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/maps/jvectormap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/medias/image-gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/js/pages/medias/image-gallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/tables/editable-table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/tables/jquery-datatable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/ui/animations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/ui/dialogs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/ui/modals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/ui/notifications.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/ui/range-sliders.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/ui/sortable-nestable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/ui/tooltips-popovers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/widgets/infobox/infobox-1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/widgets/infobox/infobox-2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/widgets/infobox/infobox-3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/widgets/infobox/infobox-4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/js/pages/widgets/infobox/infobox-5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/Gruntfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/bower.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/bower.travis.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/bower.travis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/area-as-line.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/area-as-line.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/area.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/area.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/bar-colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/bar-colors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/bar-no-axes.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/bar-no-axes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/bar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/days.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/days.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/decimal-custom-hover.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/decimal-custom-hover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/diagonal-xlabels-bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/diagonal-xlabels-bar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/diagonal-xlabels.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/diagonal-xlabels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/donut-colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/donut-colors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/donut-formatter.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/donut-formatter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/donut.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/donut.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/dst.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/dst.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/events.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/goals.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/goals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/lib/example.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/lib/example.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/lib/example.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/lib/example.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/months-no-smooth.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/months-no-smooth.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/negative.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/negative.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/no-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/no-grid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/non-continuous.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/non-continuous.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/non-date.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/non-date.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/quarters.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/quarters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/resize.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/resize.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/stacked_bars.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/stacked_bars.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/timestamps.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/timestamps.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/updating.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/updating.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/weeks.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/weeks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/years.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/examples/years.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/less/morris.core.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/less/morris.core.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.area.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.area.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.bar.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.bar.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.donut.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.donut.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.grid.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.grid.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.hover.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.hover.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.line.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/lib/morris.line.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/morris.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/morris.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/morris.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/morris.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/morris.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/morris.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/area/area_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/area/area_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/bar/bar_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/bar/bar_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/bar/colours.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/bar/colours.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/commas_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/commas_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/donut/donut_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/donut/donut_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/grid/auto_grid_lines_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/grid/auto_grid_lines_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/grid/set_data_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/grid/set_data_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/grid/y_label_format_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/grid/y_label_format_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/hover_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/hover_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/label_series_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/label_series_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/line/line_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/line/line_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/pad_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/pad_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/parse_time_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/lib/parse_time_spec.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/specs.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/specs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/support/placeholder.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/support/placeholder.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/viz/examples.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/viz/examples.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/viz/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/viz/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/viz/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/viz/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/viz/visual_specs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/morrisjs/spec/viz/visual_specs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/Gruntfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/raphael.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/raphael.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/raphael.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/raphael.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/raphael.no-deps.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/raphael.no-deps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/raphael.no-deps.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/raphael.no-deps.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/admin/plugins/raphael/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ckfinder/core/connector/php/php5/Utils/Misc.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/ckfinder/core/connector/php/php5/Utils/Misc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/welcome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/np/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/np/welcome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/aboutus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/aboutus.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/blog/blogpost.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/blog/blogpost.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/blog/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/blog/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/blog/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/blog/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/career.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/career.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/career/career.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/career/career.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/career/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/career/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/career/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/career/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/downloads/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/downloads/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/downloads/downloads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/downloads/downloads.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/downloads/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/downloads/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/gallery.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/homecontent/homecontent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/homecontent/homecontent.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/implink/implink.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/implink/implink.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/marquee/marquee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/marquee/marquee.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/slideshow/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/slideshow/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/slideshow/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/slideshow/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/slideshow/slideshow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/slideshow/slideshow.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/staff/orghead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/staff/orghead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_home/staff/orgtechhead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_home/staff/orgtechhead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/aboutus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/aboutus.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/blog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/blogitem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/blogitem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/career.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/career.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/downloads.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/downloads.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/gallery.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -385,7 +213,7 @@
       <workItem from="1577031544725" duration="1554000" />
       <workItem from="1577076498870" duration="7931000" />
       <workItem from="1577333452217" duration="253000" />
-      <workItem from="1577347532906" duration="596000" />
+      <workItem from="1577347532906" duration="1279000" />
     </task>
     <task id="LOCAL-00001" summary="ckfinder working.">
       <created>1497506356930</created>
@@ -422,6 +250,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Front End Pages-Initial" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1577428009273">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577428009273" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1577289176765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -430,9 +262,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577293833248" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577293724620">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577427929917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577293724620" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577427929917" />
   </component>
 </project>
