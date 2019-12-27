@@ -17,6 +17,6 @@ class AdminJobApplication extends Controller
         $cvname = $jobapply['cvname'];
         $jobapply->delete();
         File::Delete('uploads/cv/'.$cvname);
-        return redirect('jobapply');
+        return redirect('suggestionreceived');
     }
 }

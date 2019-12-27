@@ -18,8 +18,11 @@ class AdminDownloadController extends Controller
 
     public function savecreatedownload(){
         $input = Request::all();
+        $input['ckeditor'] = str_ireplace(array("\r","\n",'\r','\n'),'', $input['ckeditor']);
         $download = new Download();
         $download->title = $input['title'];
+        $download->type = $input['type'];
+        $download->desc = $input['ckeditor'];
         $download->filepath = $input['filepath'];
         $download->pubdate = $input['pubdate'];
         $download->save();
@@ -34,8 +37,11 @@ class AdminDownloadController extends Controller
 
     public function saveeditdownload($downloaditem){
         $input = Request::all();
+        $input['ckeditor'] = str_ireplace(array("\r","\n",'\r','\n'),'', $input['ckeditor']);
         $download = Download::find($downloaditem);
         $download->title = $input['title'];
+        $download->type = $input['type'];
+        $download->desc = $input['ckeditor'];
         $download->filepath = $input['filepath'];
         $download->pubdate = $input['pubdate'];
         $download->save();

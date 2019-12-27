@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Implink;
+use App\ImpPhone;
+use App\Slideshow;
 use Request;
 
 class AdminImplinkController extends Controller
@@ -53,4 +55,6 @@ class AdminImplinkController extends Controller
 
 
     }
+
+
 }

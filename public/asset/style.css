@@ -3,8 +3,15 @@
 	background: #009688;
 	color: #fff;
 }
+.skyblue{
+	color: #4b9fff;
+}
 .gap{
 	margin-top: 15px;
+}
+.gmap{
+	border: solid 1px;
+	border-color: rgba(221,221,221,1);
 }
 .navbar-default .navbar-nav>li>a {
     color: #fff;
@@ -52,21 +59,50 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	margin-right: 30px;
 }
 .cont{
-	width: 60%;
+	width: 75%;
 	margin-right: auto;
 	margin-left: auto;
 }
-.notice {
+.notice1 {
     min-height: 200px;
+	max-height: 330px;
+	overflow:scroll;
     border: solid 1px;
-    border-radius: 5px;
    	border-color: rgba(221,221,221,1);
    	padding: 5px;
+
+}
+.notice2 {
+	min-height: 200px;
+	max-height: 500px;
+	overflow:scroll;
+	border: solid 1px;
+	border-color: rgba(221,221,221,1);
+	padding: 5px;
+
+}
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent; /* make scrollbar transparent */
+}
+
+.notice {
+	min-height: 200px;
+	max-height: 330px;
+	/*overflow:scroll;*/
+	border: solid 1px;
+	border-color: rgba(221,221,221,1);
+	padding: 5px;
 
 }
 .topic{
 	font-size: 18px;
 	color: #009688;
+	font-weight: bold;
+}
+.topic1{
+	font-size: 18px;
+	color: white;
 	font-weight: bold;
 }
 .title{
@@ -77,6 +113,10 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	font-size: 12px;
 	font-style: italic;
 	color: #009688;
+}
+.seemore1{
+	color: #009688;
+	padding-left: 8px;
 }
 .seemore{
 	color: #009688;
@@ -93,11 +133,12 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 }
 .image{
 	display: block;
-	height: 130px;
-	width: 105px;
+	height: 110px;
+	width: 100px;
 }
 .person-name{
-	padding-left: 5px;
+	line-height: 28px;
+	padding-left: 15px;
 	margin-top: 30px;
 	font-size: 18px;
 	color:#009688;
@@ -128,7 +169,10 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 .marq{
 	background-color: #009688;
 	height: 35px;
+	width: 1180px;
 	margin-top: 5px;
+	margin-left: 15px;
+
 }
 .marq > marquee > a{
 	color: #fff;
@@ -144,4 +188,27 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 }
 .white{
 	color: #fff;
+}
+.dropdown-menu>li>a {
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: 400;
+	line-height: 1.42857143;
+	color: #fff;
+	white-space: nowrap;
+}
+.org-chart{
+	display: block;
+	overflow:scroll;
+
+}
+
+
+.person-detail{
+	font-size: 15px;
+}
+.phonetable{
+	max-height: 245px;
+	overflow: scroll;
 }

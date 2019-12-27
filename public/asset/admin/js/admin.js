@@ -2,6 +2,7 @@ if (typeof jQuery === "undefined") {
     throw new Error("jQuery plugins need to be before this file");
 }
 
+
 $.AdminBSB = {};
 $.AdminBSB.options = {
     colors: {
@@ -123,10 +124,10 @@ $.AdminBSB.leftSideBar = {
             });
 
             //Scroll active menu item when page load, if option set = true
-            if ($.AdminBSB.options.leftSideBar.scrollActiveItemWhenPageLoad) {
-                var activeItemOffsetTop = $('.menu .list li.active')[0].offsetTop
-                if (activeItemOffsetTop > 150) $el.slimscroll({ scrollTo: activeItemOffsetTop + 'px' });
-            }
+            // if ($.AdminBSB.options.leftSideBar.scrollActiveItemWhenPageLoad) {
+            //     var activeItemOffsetTop = $('.menu .list li.active')[0].offsetTop;
+            //     if (activeItemOffsetTop > 150) $el.slimscroll({ scrollTo: activeItemOffsetTop + 'px' });
+            // }
         }
     },
     checkStatuForResize: function (firstTime) {

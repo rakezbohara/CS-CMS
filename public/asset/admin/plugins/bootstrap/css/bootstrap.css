@@ -1085,7 +1085,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: black;
   background-color: #fff;
 }
 input,
@@ -1121,9 +1121,11 @@ img {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  width: 846px;
+  height:332px;
+  /*display: block;*/
+  /*max-width: 100%;*/
+  /*height: auto;*/
 }
 .img-rounded {
   border-radius: 6px;
@@ -1780,7 +1782,7 @@ pre code {
     float: left;
   }
   .col-sm-12 {
-    width: 100%;
+    width: 1140px;
   }
   .col-sm-11 {
     width: 91.66666667%;
@@ -4511,7 +4513,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: white;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {

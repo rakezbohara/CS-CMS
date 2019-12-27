@@ -18,6 +18,8 @@ class CreateStaffTable extends Migration
             $table->string('name_np',50);
             $table->string('position_en',50);
             $table->string('position_np',50);
+//            $table->string('phone_no');
+            $table->string('phone_no_np');
             $table->string('imgpath',60);
             $table->string('post',50)->default();
             $table->timestamps();

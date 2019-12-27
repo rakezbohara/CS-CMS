@@ -13,10 +13,15 @@
 
 Route::get('/','FrontEndController@index');
 Route::get('aboutus','FrontEndController@aboutus');
+Route::get('orgchart','FrontEndController@orgchart');
+Route::get('staff','FrontEndController@staff');
+Route::get('budget','FrontEndController@budget');
+Route::get('plans','FrontEndController@plans');
+Route::get('reports','FrontEndController@reports');
 Route::get('gallery','FrontEndController@gallery');
 Route::get('blog', 'FrontEndController@blog');
-Route::get('career', 'FrontEndController@career');
-Route::post('career', 'FrontEndController@savecareer');
+Route::get('suggestion', 'FrontEndController@career');
+Route::post('suggestion', 'FrontEndController@savecareer');
 Route::get('download','FrontEndController@downloads');
 Route::get('blogitem/{postid}','FrontEndController@blogitem');
 
@@ -79,6 +84,13 @@ Route::post('homecontent','AdminHomeController@savehomecontent')->middleware('au
 Route::get('implink','AdminImplinkController@implink')->middleware('auth');
 Route::post('implink','AdminImplinkController@saveimplink')->middleware('auth');
 
+//IMPORTANT LINKS
+Route::get('impPhone','AdminImpPhoneController@index')->middleware('auth');
+Route::post('createPhone','AdminImpPhoneController@saveNumber')->middleware('auth');
+Route::get('editPhone/{id}','AdminImpPhoneController@edit')->middleware('auth');
+Route::post('editPhone/{id}','AdminImpPhoneController@upload')->middleware('auth');
+Route::get('/deletePhone/{id}','AdminImpPhoneController@delete')->middleware('auth');
+
 
 //ABOUT US
 Route::get('adminaboutus','AdminAboutUsController@aboutus')->middleware('auth');
@@ -108,8 +120,24 @@ Route::get('/deletedownload/{downloaditem}','AdminDownloadController@deletedownl
 
 
 //Career Application
-Route::get('jobapply','AdminJobApplication@jobs')->middleware('auth');
+Route::get('suggestionreceived','AdminJobApplication@jobs')->middleware('auth');
 Route::get('deletecv/{cvid}','AdminJobApplication@deletejobs')->middleware('auth');
+
+//OFFICE STAFFS
+Route::get('/adminstaff','AdminStaffController@staff')->middleware('auth');
+Route::get('/createstaff','AdminStaffController@createstaff')->middleware('auth');
+Route::post('/createstaff','AdminStaffController@savecreatestaff')->middleware('auth');
+Route::post('editstaff/{staffitem}','AdminStaffController@saveeditstaff')->middleware('auth');
+Route::get('/editstaff/{staffitem}','AdminStaffController@editstaff')->middleware('auth');
+Route::get('/deletestaff/{staffitem}','AdminStaffController@deletestaff')->middleware('auth');
+
+//WASTE ROUTINE
+Route::get('/adminwaste','AdminWasteController@wasteroutine')->middleware('auth');
+Route::post('/adminwaste','AdminWasteController@savewasteroutine')->middleware('auth');
+
+//SETTING
+Route::get('/setting','AdminSettingController@setting')->middleware('auth');
+Route::post('/setting','AdminSettingController@savesetting')->middleware('auth');
 
 
 

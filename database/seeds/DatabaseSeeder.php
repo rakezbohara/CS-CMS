@@ -12,27 +12,27 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        /*DB::table('users')->insert([
+        DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin'.'@gmail.com',
             'password' => bcrypt('secret'),
             'remember_token' => str_random(10),
-        ]);*/
-        /*for($i=0;$i<10;$i++){
+        ]);
+        for($i=0;$i<10;$i++){
             DB::table('blogposts')->insert([
                 'title' => str_random(40),
                 'content' => str_random(200),
                 'pubdate' => '2017-05-12',
             ]);
 
-        }*/
-        /*DB::table('staff')->insert([
+        }
+        DB::table('staff')->insert([
             'post'=>'orghead',
         ]);
         DB::table('staff')->insert([
             'post'=>'orgtechhead',
-        ]);*/
-        /*DB::table('marquees')->insert([
+        ]);
+        DB::table('marquees')->insert([
             'id'=>1,
         ]);
         DB::table('marquees')->insert([
@@ -43,11 +43,11 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('marquees')->insert([
             'id'=>4,
-        ]);*/
-        /*DB::table('home_contents')->insert([
+        ]);
+        DB::table('home_contents')->insert([
             'id'=>1,
-        ]);*/
-        /*DB::table('implinks')->insert([
+        ]);
+        DB::table('implinks')->insert([
             'id'=>1,
         ]);
         DB::table('implinks')->insert([
@@ -61,9 +61,37 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('implinks')->insert([
             'id'=>5,
-        ]);*/
-        /*DB::table('aboutuses')->insert([
+        ]);
+        DB::table('aboutuses')->insert([
             'id'=>1,
-        ]);*/
+        ]);
+        DB::table('waste_routines')->insert([
+            'id'=>1,
+            'day' => 'Sunday',
+        ]);
+        DB::table('waste_routines')->insert([
+            'id'=>2,
+            'day' => 'Monday',
+        ]);
+        DB::table('waste_routines')->insert([
+            'id'=>3,
+            'day' => 'Tuesday',
+        ]);
+        DB::table('waste_routines')->insert([
+            'id'=>4,
+            'day' => 'Wednesday',
+        ]);
+        DB::table('waste_routines')->insert([
+            'id'=>5,
+            'day' => 'Thursday',
+        ]);
+        DB::table('waste_routines')->insert([
+            'id'=>6,
+            'day' => 'Friday',
+        ]);
+        DB::table('waste_routines')->insert([
+            'id'=>7,
+            'day' => 'Saturday',
+        ]);
     }
 }

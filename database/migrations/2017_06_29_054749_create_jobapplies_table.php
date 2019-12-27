@@ -16,7 +16,9 @@ class CreateJobappliesTable extends Migration
             $table->increments('id');
             $table->string('name',35);
             $table->string('email',35);
-            $table->string('jobname',35);
+            $table->string('phone',35);
+            $table->text('message');
+            $table->string('category',35);
             $table->string('cvname',35);
             $table->timestamps();
         });
