@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cbdb390-ad70-4570-82d3-5d385645fb25" name="Default" comment="Front End Pages-Initial">
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="0cbdb390-ad70-4570-82d3-5d385645fb25" name="Default" comment="Front End Pages-Initial" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +211,7 @@
       <workItem from="1577031544725" duration="1554000" />
       <workItem from="1577076498870" duration="7931000" />
       <workItem from="1577333452217" duration="253000" />
-      <workItem from="1577347532906" duration="1279000" />
+      <workItem from="1577347532906" duration="1539000" />
     </task>
     <task id="LOCAL-00001" summary="ckfinder working.">
       <created>1497506356930</created>
